@@ -1,0 +1,58 @@
+version: "3"
+services:
+  # Pides web-app service:
+  python-app:
+    # build container from Dockerfile located in current directory `.`
+    build: .
+    # name of image
+    image: anvil-web-app:1.0
+    # name of container
+    container_name: anvil_container
+    # Allow for restart if error occurs
+    restart: unless-stopped
+    user: "dcotton"
+    ports:
+      - "3030:3030"
+    volumes:
+      - .:/home/dcotton/app
+      - /var/www/PidesMonitor:/home/dcotton/www
+      - /home/cotton/research2023/:/home/dcotton/research2023
+    working_dir: /home/dcotton
+    # command: tail -f /dev/null
+    environment:
+      - MPLCONFIGDIR=/home/dcotton/matplotlib_config
+      - DATABASE_HOST=maria-db
+      - DATABASE_PORT=3306
+      - DATABASE_USER=ginuser
+      - DATABASE_PASS=Hello2018
+      - DATABASE_NAME=camera_nodes
+    depends_on:
+      - maria-db
+    networks:
+      - my-network
+  
+  # MariaDB Database Service
+  maria-db:
+  # use latest mariadb image
+    image: mariadb:latest
+    # name of container:
+    container_name: mariadb_container
+    restart: unless-stopped
+    # Setup database credientials:
+    environment:
+      - MYSQL_ROOT_PASSWORD=cotton
+      - MYSQL_DATABASE=camera_nodes
+      - MYSQL_USER=ginuser
+      - MYSQL_PASSWORD=Hello2018
+    volumes:
+      # Init script creates database `camera_nodes` and gives access to user `ginuser`
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount the init.sql script
+    # Put both services on the same network
+    networks:
+      - my-network
+
+# Create a network allowing for both services (maria-db and python-app) to communicate,
+networks:
+  my-network:
+  
+

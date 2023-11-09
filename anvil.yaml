@@ -1,0 +1,35 @@
+correct_dependency_ids: {ZKNOF5FRVLPVF4BI: ZKNOF5FRVLPVF4BI, C6ZZPAPN4YYF5NVJ: C6ZZPAPN4YYF5NVJ}
+dependencies:
+- app_id: ZKNOF5FRVLPVF4BI
+  version: {dev: false}
+- app_id: C6ZZPAPN4YYF5NVJ
+  version: {dev: false}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: false, enable_automatically: true, use_email: true,
+    confirm_email: true, require_secure_passwords: false, allow_remember_me: false,
+    remember_me_days: 30}
+  server_config: {user_table: users}
+startup: {type: module, module: MainModule}
+package_name: Pides_VIEWER
+allow_embedding: false
+name: Clone of Pides VIEWER (4)
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+startup_form: null
+db_schema:
+  users:
+    client: none
+    server: full
+    columns:
+    - name: email
+      type: string
+      admin_ui: {order: 0, width: 200}
+    - name: enabled
+      type: bool
+      admin_ui: {order: 1, width: 200}
+    title: Users
+uplink_visible: true

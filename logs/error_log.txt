@@ -1,0 +1,36 @@
+Encountered error in, File: camera_controls_uplink, Function: connect_to_node func. 
+Error: 1054 (42S22): Unknown column 'Activef' in 'field list' :  11:22:07, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: connect_to_node func. 
+Error: 1054 (42S22): Unknown column 'Activef' in 'field list' :  11:24:23, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: connect_to_node func. 
+Error: 1054 (42S22): Unknown column 'Activef' in 'field list' :  11:24:50, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_node_color_balance func. 
+Error: 1146 (42S02): Table 'camera_nodes.Camera_Configuration1' doesn't exist :  11:33:02, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_node_color_balance func. 
+Error: 1146 (42S02): Table 'camera_nodes.Camera_Configuration1' doesn't exist :  11:42:54, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_node_exposure_settings func. 
+Error: 1146 (42S02): Table 'camera_nodes.Camera_Configuration1' doesn't exist :  11:44:39, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_node_exposure_settings func. 
+Error: 1146 (42S02): Table 'camera_nodes.Camera_Configuration1' doesn't exist :  11:45:40, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_roi_settings func. 
+Error: 1054 (42S22): Unknown column 'None' in 'field list' :  13:28:10, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_roi_settings func. 
+Error: 1054 (42S22): Unknown column 'None' in 'field list' :  13:29:02, 11/10/2023
+
+Encountered error in, File: camera_controls_uplink, Function: update_roi_settings func. 
+Error: 1054 (42S22): Unknown column 'None' in 'field list' :  13:29:47, 11/10/2023
+
+Encountered error in, File: user_management, Function: get_user_info_from_db func. 
+Error: list index out of range :  11:07:15, 13/10/2023
+
+Encountered error in, File: user_management, Function: get_user_info_from_db func. 
+Error: list index out of range :  12:57:01, 13/10/2023
+

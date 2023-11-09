@@ -1,0 +1,229 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: content_panel
+  layout_properties: {grid_position: 'YMVUBY,PCWCNB'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'FNVKZK,JZZQOH'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
+        visible: true, text: Node Connections, font_size: 30, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'BLOQNQ,GJUAYM'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'NFSZGM,VUYWUZ'}
+    components: []
+  - type: ColumnPanel
+    properties: {role: three-side-border, tooltip: '', border: '', foreground: '',
+      visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"YVRRZN":10,"CVOMAZ":11,"RYJIME":5,"TTSCRZ":10,"THMYNQ":14,"SUFEES":10}',
+      spacing_below: none, background: '#FAF9F6'}
+    name: column_panel_5
+    layout_properties: {grid_position: 'UWZCHT,DTEVFI'}
+    components:
+    - type: Label
+      properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: 'theme:Sidebar
+          Background', visible: true, text: Add Node, font_size: 16, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'MJDRBW,TTSCRZ'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Port Num,
+        border: '', enabled: true, foreground: '', visible: true, text: '', font_size: 13,
+        font: q, spacing_above: small, type: number, spacing_below: small, italic: false,
+        background: 'theme:Header Background', bold: false, underline: false}
+      name: port_num_tb
+      layout_properties:
+        col_widths: {}
+        grid_position: MJDRBW,SUFEES
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: Gin Name
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['']
+        visible: true
+        font_size: 13
+        font: q
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: theme:Header Background
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: gin_name_drop_down
+      layout_properties:
+        col_widths: {}
+        grid_position: MJDRBW,YVRRZN
+      event_bindings: {change: gin_name_drop_down_change}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: Gin Stand Num
+        border: ''
+        enabled: true
+        foreground: ''
+        items: ['']
+        visible: true
+        font_size: 13
+        font: q
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: theme:Header Background
+        bold: false
+        underline: false
+        include_placeholder: true
+      name: gin_stand_drop_down
+      layout_properties:
+        col_widths: {}
+        grid_position: MJDRBW,CVOMAZ
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_8
+      layout_properties: {grid_position: 'MJDRBW,RYJIME'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: ' Add Camera Node', font_size: 13,
+        font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: 'theme:Accent 1', bold: false, underline: false, icon: 'fa:plus'}
+      name: add_node_button
+      layout_properties:
+        col_widths: {}
+        grid_position: MJDRBW,THMYNQ
+      event_bindings: {click: add_node_button_click}
+  - type: FlowPanel
+    properties: {role: border-stack, spacing: tiny, align: left, tooltip: '', border: '',
+      foreground: '', visible: true, spacing_above: none, spacing_below: none, background: '#FAF9F6'}
+    name: flow_panel_1
+    layout_properties: {grid_position: 'SHMFUS,XUNYBW'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: theme:Sidebar Background
+        items: ['']
+        visible: true
+        font_size: 13
+        font: q
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: ''
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: gin_search_drop_down
+      layout_properties: {}
+    - type: Spacer
+      properties: {visible: true, spacing_above: small, spacing_below: small, height: 32,
+        tooltip: ''}
+      name: spacer_2
+      layout_properties: {width: 10, expand: false}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#000000', visible: true, text: ' Search', font_size: 13, font: q,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: 'theme:Header Background', bold: false, underline: false, icon: 'fa:search'}
+      name: search_button
+      layout_properties: {}
+      event_bindings: {click: search_button_click}
+  - type: DataGrid
+    properties:
+      role: bottom-border-rounded
+      columns:
+      - {id: GQOQFZ, title: 'Port #', data_key: node_port_num, $$hashKey: 'object:6539',
+        expand: true, width: ''}
+      - {id: QJCWRH, title: Gin Name, data_key: gin_name, $$hashKey: 'object:6583',
+        expand: true, width: ''}
+      - {id: RULJMV, title: 'Gin Stand #', data_key: gin_stand_num, $$hashKey: 'object:6540',
+        expand: true, width: ''}
+      - {id: KGWOZV, title: Active, data_key: active, $$hashKey: 'object:8558', expand: true}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: '#212121'
+      rows_per_page: 10
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: none
+      spacing_below: small
+      background: '#FAF9F6'
+    name: nodeConns_data_grid
+    layout_properties: {grid_position: 'PBXIUY,OEBBRU'}
+    components:
+    - type: RepeatingPanel
+      properties: {spacing_above: none, spacing_below: none, item_template: FormNodeConns.RowTemplate1}
+      name: repeating_panel_node_conns
+      layout_properties: {}
+      data_bindings: []
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"GMQMSS":15,"FYFMOU":45}',
+        spacing_below: small, background: ''}
+      name: column_panel_4
+      layout_properties: {slot: footer}
+      components:
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Enter a port num,
+          border: '', enabled: true, foreground: 'theme:Sidebar Background', visible: true,
+          text: '', font_size: 12, font: q, spacing_above: small, type: number, spacing_below: small,
+          italic: false, background: 'theme:Header Background', bold: false, underline: false}
+        name: delete_port_num_tb
+        layout_properties: {grid_position: 'QRNMPO,GMQMSS'}
+        event_bindings: {pressed_enter: delete_port_num}
+      - type: Button
+        properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+          foreground: 'theme:Sidebar Background', visible: true, text: ' Delete Port',
+          font_size: 12, font: q, spacing_above: small, icon_align: left, spacing_below: small,
+          italic: false, background: 'theme:Red', bold: true, underline: false, icon: 'fa:scissors'}
+        name: delete_port_num_button
+        layout_properties: {grid_position: 'QRNMPO,FYFMOU'}
+        event_bindings: {click: delete_port_num}
+    data_bindings: []
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'MIBFPG,HHOIFR'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_3
+      layout_properties: {grid_position: 'ZETNPR,VDMNCD'}
+- type: Timer
+  properties: {interval: 30}
+  name: get_nodes_connected_timer
+  event_bindings: {tick: get_nodes_connected_timer_tick}
+is_package: true

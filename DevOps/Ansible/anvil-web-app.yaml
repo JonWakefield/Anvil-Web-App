@@ -1,0 +1,62 @@
+---
+  - name: Setup Anvil Web App
+    hosts: servers
+    become: yes
+    vars:
+      init_sql_file: ~/Desktop/Anvil_test/DevOps/Ansible/init.sql
+
+    tasks:
+      - name: Update the package manager
+        apt:
+          update_cache: yes
+      
+      - name: Install Python 3
+        apt:
+          name: python3
+          state: present
+
+      - name: Install Python 3 virtual environment
+        apt:
+          name: python3-venv
+          state: present
+  
+      - name: Change to the Desktop Directory
+        file:
+          path: /home/pi/Desktop
+          state: directory
+
+      - name: Create the Anvil Folder
+        file:
+          path: ~/Desktop/Anvil_test
+          state: directory
+          mode: 0755
+
+      - name: Pull Anvil Web App from github
+        git:
+          repo: https://github.com/JonWakefield/Anvil-Web-App
+          dest: /home/pi/Desktop/Anvil_test
+          clone: yes
+          update: yes
+
+      - name: Change to the Desktop/Anvil Directory
+        file:
+          path: /home/pi/Desktop/Anvil_test
+          state: directory
+
+      # - name: Pip install Anvil requirements.txt
+      #   pip3:
+      #     requirements: /home/pi/Desktop/Anvil_test/requirements.txt
+
+      - name: Pip install Anvil requirements.txt
+        command: pip3 install -r /home/pi/Desktop/Anvil_test/requirements.txt
+      
+      - name: Create database and sql user
+        mysql_db:
+          name: camera_nodes
+          state: import
+          target: ~/Desktop/Anvil_test/DevOps/Ansible/init.sql
+        become: yes
+
+
+
+

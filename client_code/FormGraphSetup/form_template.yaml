@@ -1,0 +1,169 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: rounded-box-shadow, tooltip: '', border: '', foreground: '',
+    visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#eee'}
+  name: content_panel
+  layout_properties: {grid_position: 'IVVUUI,FDZYEB'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'XYXYPM,OQKNVH'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Type of Graph:', font_size: 20, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'MEKNRR,THNBDT'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_2
+      layout_properties: {grid_position: 'WLYQRI,NWSRCG'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: '#111'
+        items: [Daily Total, 3 Day Total, 7 Day Total, 30 Day Total, Season Total]
+        visible: true
+        font_size: 15
+        font: q
+        spacing_above: none
+        spacing_below: small
+        italic: false
+        background: theme:Header Background
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_graph_type
+      layout_properties: {grid_position: 'WLYQRI,ABUQKD'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_3
+      layout_properties: {grid_position: 'WLYQRI,ACYXFN'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'BOSHNQ,QEIGXJ'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: Graph Scale, font_size: 20, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'TDOBVV,ZZBJDJ'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_4
+      layout_properties: {grid_position: 'VMPUVD,YVVAER'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: false
+        foreground: '#111'
+        items: [Auto-Scale, Per 100 Bales, 'Per 1,000 Bales', 'Per 10,000 Bales']
+        visible: true
+        font_size: 15
+        font: q
+        spacing_above: none
+        spacing_below: small
+        italic: false
+        background: theme:Header Background
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_graph_scale
+      layout_properties: {grid_position: 'VMPUVD,KCTTPL'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_5
+      layout_properties: {grid_position: 'VMPUVD,HLQAWP'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_5
+    layout_properties: {grid_position: 'EYWJZZ,GXDNCW'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Gin Data:', font_size: 20, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_3
+      layout_properties: {grid_position: 'IWSOSE,MYRMMJ'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_6
+      layout_properties: {grid_position: 'GRSPJO,HKVHJI'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: '#111'
+        items: []
+        visible: true
+        font_size: 15
+        font: q
+        spacing_above: none
+        spacing_below: small
+        italic: false
+        background: theme:Header Background
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: drop_down_gin_name
+      layout_properties: {grid_position: 'GRSPJO,FRBYOP'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_7
+      layout_properties: {grid_position: 'GRSPJO,PETICR'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_3
+    layout_properties: {grid_position: 'KIWGHH,AVQNFK'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'GVEQUU,NSIVHC'}
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+      spacing_below: small, background: ''}
+    name: column_panel_4
+    layout_properties: {grid_position: 'FRYLTL,HCKCOM', full_width_row: false}
+    components:
+    - type: Button
+      properties: {role: button-click, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#eee', visible: true, text: Update Graph, font_size: 25, font: q,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#333', bold: true, underline: false, icon: ''}
+      name: update_graph_button
+      layout_properties: {grid_position: 'DSFBTM,LYRUCZ', full_width_row: true}
+      event_bindings: {click: update_graph_button_click}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#5A5A5A',
+        visible: false, text: Navigate to Graph Viewer to see updated chart., font_size: 15,
+        font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_graph_nav
+      layout_properties: {grid_position: 'FMQTWA,FORWNA'}
+is_package: true

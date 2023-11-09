@@ -1,0 +1,632 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {role: rounded-box-shadow, tooltip: '', border: '', foreground: '',
+    visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#eee'}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: FNIAAR,JXECCM
+  components:
+  - type: ColumnPanel
+    properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"MJTMJM":30,"PRLJXB":55,"DQYHMF":10}',
+      spacing_below: small, background: ''}
+    name: columnpanel_10
+    layout_properties:
+      col_widths: {}
+      grid_position: SDDHIM,NZGVMN
+    components:
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_1
+      layout_properties: {grid_position: 'QVGMCO,DHSTWP'}
+      components:
+      - type: Label
+        properties: {role: bottom-border, align: center, tooltip: '', border: '',
+          foreground: '#000000', visible: true, text: Node Camera Settings, font_size: 25,
+          font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '', bold: false, underline: false, icon: ''}
+        name: label_2
+        layout_properties: {grid_position: 'XJQWGE,UVGJXN'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_2
+      layout_properties: {grid_position: 'GFPRML,DQYHMF'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+        visible: true, text: 'Connect To Node:', font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: true, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_14
+      layout_properties: {grid_position: 'GFPRML,MJTMJM'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_9
+      layout_properties: {grid_position: 'GFPRML,PRLJXB'}
+    - type: ColumnPanel
+      properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"KYBIMI":10,"EPWUCE":15,"MFNNYN":27,"PPMWSY":15}',
+        spacing_below: small, background: ''}
+      name: column_panel_13
+      layout_properties: {grid_position: 'EXCUDG,SUCCUM'}
+      components:
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Port Number:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_1
+        layout_properties: {grid_position: 'EEVIXD,KYBIMI'}
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Port Num.,
+          border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+          font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+          italic: false, background: '#FFFFFF', bold: false, underline: false}
+        name: port_num_tb
+        layout_properties: {grid_position: 'EEVIXD,EPWUCE'}
+        event_bindings: {pressed_enter: node_connect_button_click}
+      - type: Button
+        properties: {role: button-click, align: left, tooltip: '', border: '', enabled: true,
+          foreground: '#eee', visible: true, text: Connect, font_size: 15, font: q,
+          spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#333', bold: false, underline: false, icon: ''}
+        name: node_connect_button
+        layout_properties: {grid_position: 'EEVIXD,PPMWSY'}
+        event_bindings: {click: node_connect_button_click}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_3
+        layout_properties: {grid_position: 'EEVIXD,MFNNYN'}
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"NJDOZW":43,"KXLDDC":5,"BQUUQP":12}',
+        spacing_below: none, background: ''}
+      name: column_panel_15
+      layout_properties: {grid_position: 'HNBSQE,UETVLM'}
+      components:
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_4
+        layout_properties: {grid_position: 'JLWZVQ,KXLDDC'}
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Node Info:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: none, italic: true, background: '', bold: true,
+          underline: false, icon: ''}
+        name: label_15
+        layout_properties: {grid_position: 'JLWZVQ,NJDOZW'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_11
+        layout_properties: {grid_position: 'JLWZVQ,BQUUQP'}
+    - type: ColumnPanel
+      properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"OGTHSQ":65,"RGJWFT":55,"RMBXWI":10,"ACONCI":50,"SWTKVY":15,"KPPYOY":7,"VVZHAS":15,"AJXNJK":7,"AKAZTD":13,"XKVPUZ":13,"RWRBCX":15,"KAUIBT":10,"BDYXPH":15,"XHBTJV":10}',
+        spacing_below: small, background: ''}
+      name: column_panel_14
+      layout_properties: {grid_position: 'UVKMZU,BIFBLJ'}
+      components:
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Gin Name:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_12
+        layout_properties: {grid_position: 'BHINXS,RMBXWI JBQSKQ,OGTHSQ'}
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Gin Stand Num:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_13
+        layout_properties: {grid_position: 'BHINXS,RMBXWI YYMUJM,RGJWFT'}
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+          border: '', enabled: false, foreground: '#000000', visible: true, text: '',
+          font_size: 15, font: q, spacing_above: small, type: text, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false}
+        name: gin_name_tb
+        layout_properties: {grid_position: 'BHINXS,ACONCI GHQGCB,SWTKVY'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_6
+        layout_properties: {grid_position: 'BHINXS,ACONCI GHQGCB,KPPYOY'}
+      - type: Label
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Node Position:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_5
+        layout_properties: {grid_position: 'BHINXS,ACONCI GHQGCB,AKAZTD'}
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+          border: '', enabled: false, foreground: '#000000', visible: true, text: '',
+          font_size: 15, font: q, spacing_above: small, type: text, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false}
+        name: node_position_tb
+        layout_properties: {grid_position: 'BHINXS,ACONCI GHQGCB,RWRBCX'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_5
+        layout_properties: {grid_position: 'BHINXS,ACONCI GHQGCB,KAUIBT'}
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+          border: '', enabled: false, foreground: '#000000', visible: true, text: '',
+          font_size: 15, font: q, spacing_above: small, type: text, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false}
+        name: gin_stand_num_tb
+        layout_properties: {grid_position: 'BHINXS,ACONCI NRWTYG,VVZHAS'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_7
+        layout_properties: {grid_position: 'BHINXS,ACONCI NRWTYG,AJXNJK'}
+      - type: Label
+        properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Gin Location:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_6
+        layout_properties: {grid_position: 'BHINXS,ACONCI NRWTYG,XKVPUZ'}
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+          border: '', enabled: false, foreground: '#000000', visible: true, text: '',
+          font_size: 15, font: q, spacing_above: small, type: text, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false}
+        name: gin_location_tb
+        layout_properties: {grid_position: 'BHINXS,ACONCI NRWTYG,BDYXPH'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_8
+        layout_properties: {grid_position: 'BHINXS,ACONCI NRWTYG,XHBTJV'}
+    - type: ColumnPanel
+      properties: {col_widths: '{"YICRCG":5,"QMVGNA":30,"ZPRGOI":13,"TOWYVO":3,"IDJNWI":3,"KAVZFY":3,"UFSUHF":3}'}
+      name: column_panel_17
+      layout_properties: {grid_position: 'XUHCDE,SENGXN'}
+      components:
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_13
+        layout_properties: {grid_position: 'TWSFYV,YICRCG'}
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Color Balance:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: true, background: '', bold: true,
+          underline: false, icon: ''}
+        name: label_16_copy
+        layout_properties:
+          col_widths: {}
+          grid_position: TWSFYV,QMVGNA
+      - type: Button
+        properties: {role: button-click, align: center, tooltip: '', border: '', enabled: true,
+          foreground: '#eee', visible: true, text: Update Color Balance, font_size: 15,
+          font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#333', bold: false, underline: false, icon: ''}
+        name: update_colorbal_button
+        layout_properties: {grid_position: 'TWSFYV,ZPRGOI'}
+        event_bindings: {click: update_colorbal_button_click}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_20
+        layout_properties: {grid_position: 'TWSFYV,TOWYVO'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_21
+        layout_properties: {grid_position: 'TWSFYV,IDJNWI'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_22
+        layout_properties: {grid_position: 'TWSFYV,KAVZFY'}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_23
+        layout_properties: {grid_position: 'TWSFYV,UFSUHF'}
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '#000000', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: column_panel_3
+      layout_properties: {grid_position: 'QJHYVH,HRHMIL'}
+      components:
+      - type: RadioButton
+        properties: {role: null, selected: false, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '', value: '1', visible: true, text: Color-Balance (2800K),
+          font_size: 15, font: q, spacing_above: small, spacing_below: small, italic: false,
+          background: '', bold: false, group_name: radio_group_cb, underline: false}
+        name: rb_colbal_2800
+        layout_properties: {grid_position: 'UURKTT,ZLZUID'}
+        event_bindings: {clicked: radio_but_noncustom_selected}
+      - type: RadioButton
+        properties: {role: null, selected: false, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '#000000', value: '3', visible: true, text: Color-Balance (6500K),
+          font_size: 15, font: q, spacing_above: small, spacing_below: small, italic: false,
+          background: '', bold: false, group_name: radio_group_cb, underline: false}
+        name: rb_colbal_6500
+        layout_properties: {grid_position: 'UURKTT,NHDVYM'}
+        event_bindings: {clicked: radio_but_noncustom_selected}
+    - type: ColumnPanel
+      properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: column_panel_4
+      layout_properties: {grid_position: 'SUCLAV,STZKDL'}
+      components:
+      - type: RadioButton
+        properties: {role: null, selected: false, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '#000000', value: '2', visible: true, text: Color-Balance (5000K),
+          font_size: 15, font: q, spacing_above: small, spacing_below: small, italic: false,
+          background: '', bold: false, group_name: radio_group_cb, underline: false}
+        name: rb_colbal_5000
+        layout_properties: {grid_position: 'WZUJMR,JRVDVT'}
+        event_bindings: {clicked: radio_but_noncustom_selected}
+      - type: RadioButton
+        properties: {role: null, selected: false, align: center, tooltip: '', border: '',
+          enabled: true, foreground: '#000000', value: '4', visible: true, text: Color-Balance (Custom),
+          font_size: 15, font: q, spacing_above: small, spacing_below: small, italic: false,
+          background: '', bold: false, group_name: radio_group_cb, underline: false}
+        name: rb_colbal_custom
+        layout_properties: {grid_position: 'WZUJMR,YMZQWP'}
+        event_bindings: {clicked: radio_but_custom_selected}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
+        visible: false, text: Custom Color Balance accepted range 1-100, font_size: 15,
+        font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: label_cb_help
+      layout_properties:
+        col_widths: {}
+        grid_position: NYOSDQ,AWAHWP
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: false,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"JRQRJN":30,"TVPCVD":30}',
+        spacing_below: small, background: ''}
+      name: column_panel_10
+      layout_properties: {grid_position: 'LHZUIN,IRGQKD'}
+      components:
+      - type: Label
+        properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Color-Balance White:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_custom_cb_white
+        layout_properties: {grid_position: 'LXWJTD,JRQRJN'}
+      - type: FlowPanel
+        properties: {role: null, vertical_align: full, spacing: medium, align: center,
+          tooltip: '', border: '', foreground: '', visible: true, spacing_above: small,
+          spacing_below: small, background: ''}
+        name: flow_panel_white
+        layout_properties: {grid_position: 'LXWJTD,TVPCVD'}
+        components:
+        - type: TextBox
+          properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 1-100,
+            border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+            font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+            italic: false, background: FFFFFF, bold: false, underline: false}
+          name: text_box_cb_white
+          layout_properties: {grid_position: 'RMLXEF,WRBSTK', width: 218, expand: false}
+          event_bindings: {pressed_enter: text_box_color_balance_pressed_enter}
+        - type: Spacer
+          properties: {visible: true, spacing_above: small, spacing_below: small,
+            height: 32, tooltip: ''}
+          name: spacer_1_copy_3
+          layout_properties: {width: 45.6, expand: false}
+    - type: ColumnPanel
+      properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: false,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: column_panel_11
+      layout_properties: {grid_position: 'ANSITF,THPACM'}
+      components:
+      - type: Label
+        properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Color-Balance Red:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_custom_cb_red
+        layout_properties: {grid_position: 'RMLXEF,CPXWOD'}
+      - type: FlowPanel
+        properties: {role: null, vertical_align: full, spacing: medium, align: center,
+          tooltip: '', border: '', foreground: '', visible: true, spacing_above: small,
+          spacing_below: small, background: ''}
+        name: flow_panel_red
+        layout_properties: {grid_position: 'RMLXEF,XEJJCY'}
+        components:
+        - type: TextBox
+          properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 1-100,
+            border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+            font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+            italic: false, background: FFFFFF, bold: false, underline: false}
+          name: text_box_cb_red
+          layout_properties: {grid_position: 'LXWJTD,AXDGDK', width: 218, expand: false}
+          event_bindings: {pressed_enter: text_box_1_pressed_enter}
+        - type: Spacer
+          properties: {visible: true, spacing_above: small, spacing_below: small,
+            height: 32, tooltip: ''}
+          name: spacer_1_copy_4
+          layout_properties: {width: 45.6, expand: false}
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"GEJRUY":5,"SIGPCH":55}',
+        spacing_below: none, background: ''}
+      name: column_panel_18
+      layout_properties: {grid_position: 'CEKSJO,BRUDJI'}
+      components:
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_17
+        layout_properties: {grid_position: 'DIMHEL,GEJRUY'}
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: Camera Settings, font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: none, italic: true, background: '', bold: true,
+          underline: false, icon: ''}
+        name: label_16
+        layout_properties: {grid_position: 'DIMHEL,SIGPCH'}
+    - type: ColumnPanel
+      properties: {col_widths: '{"MHSUUS":17,"VRAMMQ":15,"TEZAWM":40,"JFERON":3}'}
+      name: column_panel_2
+      layout_properties: {grid_position: 'BBTRVV,GWGZBX'}
+      components:
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_14
+        layout_properties: {grid_position: 'QEHBDV,JFERON', full_width_row: false}
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Gain (1-100):', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_3
+        layout_properties: {grid_position: 'QEHBDV,MHSUUS', full_width_row: false}
+      - type: TextBox
+        properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '50',
+          border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+          font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+          italic: false, background: '', bold: false, underline: false}
+        name: text_box_gain
+        layout_properties: {grid_position: 'QEHBDV,VRAMMQ', full_width_row: false,
+          row_background: '', width: 218, expand: false}
+        event_bindings: {pressed_enter: text_box_gain_pressed_enter}
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_1
+        layout_properties: {grid_position: 'QEHBDV,TEZAWM', full_width_row: false}
+    - type: ColumnPanel
+      properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"XIPIUG":12,"NCXQRZ":25,"HSOLFU":3,"LFSXTR":25}',
+        spacing_below: small, background: ''}
+      name: column_panel_5
+      layout_properties: {grid_position: 'ZADZKW,DWNOII'}
+      components:
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_15
+        layout_properties: {grid_position: 'NCFNZQ,HSOLFU', row_background: '', full_width_row: false}
+      - type: Label
+        properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+          visible: true, text: 'Exposure:', font_size: 15, font: q, spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: label_4
+        layout_properties: {grid_position: 'NCFNZQ,XIPIUG', full_width_row: false,
+          row_background: ''}
+      - type: FlowPanel
+        properties: {role: null, spacing: tiny, align: center, tooltip: '', border: '',
+          foreground: '', visible: true, spacing_above: small, spacing_below: small,
+          background: ''}
+        name: flow_panel_1
+        layout_properties: {grid_position: 'NCFNZQ,NCXQRZ', row_background: '', full_width_row: false}
+        components:
+        - type: TextBox
+          properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '750',
+            border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+            font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+            italic: false, background: '', bold: false, underline: false}
+          name: text_box_exposure
+          layout_properties: {grid_position: 'VBDBIK,TQRNFW', full_width_row: false,
+            row_background: '', width: 218, expand: false}
+        - type: DropDown
+          properties:
+            role: null
+            align: center
+            tooltip: ''
+            placeholder: ''
+            border: ''
+            enabled: true
+            foreground: '#000000'
+            items: [ms, μs]
+            visible: true
+            font_size: 15
+            font: q
+            spacing_above: small
+            spacing_below: small
+            italic: false
+            background: ''
+            bold: false
+            underline: false
+            include_placeholder: false
+          name: drop_down_exposure_units
+          layout_properties: {width: null, expand: false}
+      - type: Button
+        properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+          foreground: '#eee', visible: true, text: Update Cam Settings, font_size: 15,
+          font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+          background: '#333', bold: false, underline: false, icon: ''}
+        name: update_cam_settings_button
+        layout_properties: {grid_position: 'NCFNZQ,LFSXTR', row_background: '', full_width_row: false}
+        event_bindings: {click: update_cam_settings_button_click}
+    - type: ColumnPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}',
+        spacing_below: none, background: ''}
+      name: column_panel_8
+      layout_properties: {grid_position: 'VFQCUR,KSRJNM'}
+      components:
+      - type: ColumnPanel
+        properties: {col_widths: '{"UBGADP":5,"SDTOKS":55}'}
+        name: column_panel_12
+        layout_properties: {grid_position: 'RBTSWS,QPWWYQ'}
+        components:
+        - type: Spacer
+          properties: {height: 32}
+          name: spacer_18
+          layout_properties: {grid_position: 'NXOGTI,UBGADP'}
+        - type: Label
+          properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+            visible: true, text: 'Region of Interest (ROI):', font_size: 15, font: q,
+            spacing_above: small, icon_align: left, spacing_below: small, italic: true,
+            background: '', bold: true, underline: false, icon: ''}
+          name: label_10
+          layout_properties: {grid_position: 'NXOGTI,SDTOKS'}
+      - type: ColumnPanel
+        properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+          wrap_on: mobile, col_spacing: small, spacing_above: small, col_widths: '{"HUDQNO":17,"OZJUIM":10,"PBDDDT":3,"KJJCHD":45}',
+          spacing_below: small, background: ''}
+        name: column_panel_16
+        layout_properties:
+          col_widths: {}
+          grid_position: DXORUA,TSWMSA
+        components:
+        - type: Spacer
+          properties: {height: 32}
+          name: spacer_16
+          layout_properties: {grid_position: 'THBCTT,PBDDDT'}
+        - type: Label
+          properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#000000',
+            visible: true, text: 'Minimum Blob Size:', font_size: 15, font: q, spacing_above: small,
+            icon_align: left, spacing_below: small, italic: false, background: '',
+            bold: false, underline: false, icon: ''}
+          name: label_8
+          layout_properties: {grid_position: 'THBCTT,HUDQNO'}
+        - type: TextBox
+          properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '500',
+            border: '', enabled: true, foreground: '#000000', visible: true, text: '500',
+            font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+            italic: false, background: '', bold: false, underline: false}
+          name: text_box_blob_size
+          layout_properties: {grid_position: 'THBCTT,OZJUIM', width: 218, expand: false}
+          event_bindings: {pressed_enter: text_box_blob_size_pressed_enter}
+        - type: Spacer
+          properties: {height: 32}
+          name: spacer_19
+          layout_properties: {grid_position: 'THBCTT,KJJCHD'}
+      - type: ColumnPanel
+        properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+          wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+          spacing_below: small, background: ''}
+        name: column_panel_7
+        layout_properties: {grid_position: 'EBSRLX,PCBKFY'}
+        components:
+        - type: FlowPanel
+          properties: {role: null, spacing: medium, align: center, tooltip: '', border: '',
+            foreground: '', visible: true, spacing_above: small, spacing_below: small,
+            background: ''}
+          name: flow_panel_3
+          layout_properties: {grid_position: 'VBDBIK,FKDAUK'}
+          components:
+          - type: Label
+            properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+              visible: true, text: 'Min. X:', font_size: 15, font: q, spacing_above: small,
+              icon_align: left, spacing_below: small, italic: false, background: '',
+              bold: false, underline: false, icon: ''}
+            name: label_7
+            layout_properties: {}
+          - type: TextBox
+            properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+              border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+              font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+              italic: false, background: '', bold: false, underline: false}
+            name: text_box_roi_x_min
+            layout_properties: {width: 180, expand: false}
+          - type: Label
+            properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+              visible: true, text: 'Min. Y:', font_size: 15, font: q, spacing_above: small,
+              icon_align: left, spacing_below: small, italic: false, background: '',
+              bold: false, underline: false, icon: ''}
+            name: label_11
+            layout_properties: {}
+          - type: TextBox
+            properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: '',
+              border: '', enabled: true, foreground: '#000000', visible: true, text: '',
+              font_size: 15, font: q, spacing_above: small, type: number, spacing_below: small,
+              italic: false, background: '', bold: false, underline: false}
+            name: text_box_roi_y_min
+            layout_properties: {width: 180, expand: false}
+        - type: ColumnPanel
+          properties: {col_widths: '{}'}
+          name: column_panel_7_copy
+          layout_properties:
+            col_widths: {}
+            grid_position: THJMAF,KIMZQN
+          components:
+          - type: FlowPanel
+            properties: {role: null, spacing: medium, align: center, tooltip: '',
+              border: '', foreground: '', visible: true, spacing_above: small, spacing_below: none,
+              background: ''}
+            name: flow_panel_3_copy
+            layout_properties: {grid_position: 'VBDBIK,FKDAUK'}
+            components:
+            - type: Label
+              properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+                visible: true, text: 'Max. X:', font_size: 15, font: q, spacing_above: small,
+                icon_align: left, spacing_below: small, italic: false, background: '',
+                bold: false, underline: false, icon: ''}
+              name: label_7_copy
+              layout_properties: {}
+            - type: TextBox
+              properties: {role: null, align: left, hide_text: false, tooltip: '',
+                placeholder: '', border: '', enabled: true, foreground: '#000000',
+                visible: true, text: '', font_size: 15, font: q, spacing_above: small,
+                type: number, spacing_below: small, italic: false, background: '',
+                bold: false, underline: false}
+              name: text_box_roi_x_max
+              layout_properties: {width: 180, expand: false}
+            - type: Label
+              properties: {role: null, align: left, tooltip: '', border: '', foreground: '#000000',
+                visible: true, text: 'Max. Y:', font_size: 15, font: q, spacing_above: small,
+                icon_align: left, spacing_below: small, italic: false, background: '',
+                bold: false, underline: false, icon: ''}
+              name: label_11_copy
+              layout_properties: {}
+            - type: TextBox
+              properties: {role: null, align: left, hide_text: false, tooltip: '',
+                placeholder: '', border: '', enabled: true, foreground: '#000000',
+                visible: true, text: '', font_size: 15, font: q, spacing_above: small,
+                type: number, spacing_below: small, italic: false, background: '',
+                bold: false, underline: false}
+              name: text_box_roi_y_max
+              layout_properties: {width: 180, expand: false}
+    - type: ColumnPanel
+      properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+        wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+        spacing_below: small, background: ''}
+      name: column_panel_9
+      layout_properties: {grid_position: 'ANAKMU,VZJTID'}
+      components:
+      - type: Button
+        properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+          foreground: '#eee', visible: true, text: Update ROI, font_size: 15, font: q,
+          spacing_above: none, icon_align: left, spacing_below: small, italic: false,
+          background: '#333', bold: false, underline: false, icon: ''}
+        name: update_roi_button
+        layout_properties: {grid_position: 'JFNGPD,LBSMWC'}
+        event_bindings: {click: update_roi_button_click}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+        visible: false, text: 'Note: Each Submission will cause restart of PIDES machine-vision
+          software.', font_size: 14, font: '', spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: label_9
+      layout_properties: {grid_position: 'LALOMA,BLBPRW'}
+    - type: ColumnPanel
+      properties: {col_widths: '{}'}
+      name: column_panel_6
+      layout_properties: {grid_position: 'EJCRZH,PBERVC'}
+      components:
+      - type: Spacer
+        properties: {height: 32}
+        name: spacer_12
+        layout_properties: {grid_position: 'YLFXIG,YCRELA'}
+is_package: true

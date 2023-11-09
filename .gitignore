@@ -1,0 +1,5 @@
+*.pyc
+*.pyo
+*.retry
+__pycache__
+.anvil-data

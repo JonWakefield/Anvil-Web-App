@@ -1,0 +1,205 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: rounded-box-shadow, tooltip: '', border: '', foreground: '',
+    visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: '#f1f1f1'}
+  name: content_panel
+  layout_properties: {grid_position: 'YOFRYE,HMSBOD'}
+  components:
+  - type: ColumnPanel
+    properties: {col_widths: '{"IPCRMN":3,"PRHCYH":57}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'WNCDJE,XSCDHH'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_11
+      layout_properties: {grid_position: 'XGFCUF,IPCRMN'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Sidebar
+          Background', visible: true, text: Settings, font_size: 30, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'XGFCUF,PRHCYH'}
+  - type: ColumnPanel
+    properties: {role: top-bottom-border, tooltip: '', border: '', foreground: '',
+      visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"NKELTC":27,"DFVFAH":20,"DVTLNQ":3,"VQEBWH":3,"JPWMAB":57,"QWAJJY":32}',
+      spacing_below: none, background: ''}
+    name: column_panel_4
+    layout_properties: {grid_position: 'GPOZNA,AVPGXF'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_10
+      layout_properties: {grid_position: 'GAKFVZ,VQEBWH'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Change Gin Access:', font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: change_gin_panel
+      layout_properties: {grid_position: 'GAKFVZ,JPWMAB'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_9
+      layout_properties: {grid_position: 'FOASUH,DVTLNQ'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: '#333'
+        items: ['']
+        visible: true
+        font_size: 15
+        font: q
+        spacing_above: none
+        spacing_below: small
+        italic: false
+        background: '#eee'
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: gin_name_drop_down
+      layout_properties: {grid_position: 'FOASUH,NKELTC'}
+    - type: Button
+      properties: {role: button-click, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#eee', visible: true, text: Change Gin, font_size: 15, font: q,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#333', bold: false, underline: false, icon: ''}
+      name: change_gin_button
+      layout_properties: {grid_position: 'FOASUH,DFVFAH'}
+      event_bindings: {click: change_gin_button_click}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_13
+      layout_properties: {grid_position: 'FOASUH,QWAJJY'}
+  - type: ColumnPanel
+    properties: {role: top-bottom-border, tooltip: '', border: '', foreground: '',
+      visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"TMFAFX":3,"UOHGHP":22,"YQODZW":35,"YFXFGV":3,"LUWONY":22,"TIQRGY":35,"DARDKL":3,"AHGUQX":57,"SDTNUE":3,"TZHDAD":57,"APDEER":15,"QJGARE":3,"EOVNLY":57}',
+      spacing_below: small, background: ''}
+    name: change_password_panel
+    layout_properties: {grid_position: 'PWGJSS,PFZEDL'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_7
+      layout_properties: {grid_position: 'KDSRQX,DARDKL'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: Change Password, font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_2
+      layout_properties: {grid_position: 'KDSRQX,AHGUQX'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_4
+      layout_properties: {grid_position: 'UOCHUE,TMFAFX'}
+    - type: TextBox
+      properties: {role: left-padding, align: left, hide_text: true, tooltip: '',
+        placeholder: Current Password, border: '', enabled: true, foreground: '#333',
+        visible: true, text: '', font_size: 15, font: q, spacing_above: none, type: text,
+        spacing_below: small, italic: false, background: '#eee', bold: false, underline: false}
+      name: current_password_tb
+      layout_properties: {grid_position: 'UOCHUE,UOHGHP'}
+      event_bindings: {}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', allow_indeterminate: false, visible: true, text: Show, font_size: 15,
+        font: q, spacing_above: small, spacing_below: small, italic: false, background: '',
+        bold: false, checked: false, underline: false}
+      name: show_cur_password_cbox
+      layout_properties: {grid_position: 'UOCHUE,APDEER'}
+      event_bindings: {change: show_cur_password}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_3
+      layout_properties: {grid_position: 'UOCHUE,YQODZW'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_5
+      layout_properties: {grid_position: 'ECGLVD,YFXFGV'}
+    - type: TextBox
+      properties: {role: left-padding, align: left, hide_text: true, tooltip: '',
+        placeholder: New Password, border: '', enabled: true, foreground: '#333',
+        visible: true, text: '', font_size: 15, font: q, spacing_above: small, type: text,
+        spacing_below: small, italic: false, background: '#eee', bold: false, underline: false}
+      name: new_password_tb
+      layout_properties: {grid_position: 'ECGLVD,LUWONY'}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', allow_indeterminate: false, visible: true, text: Show, font_size: 15,
+        font: q, spacing_above: small, spacing_below: small, italic: false, background: '',
+        bold: false, checked: false, underline: false}
+      name: show_new_password_cbox
+      layout_properties: {grid_position: 'ECGLVD,DHMGBG'}
+      event_bindings: {change: show_new_password}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_2
+      layout_properties: {grid_position: 'ECGLVD,TIQRGY'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_6
+      layout_properties: {grid_position: 'ZPPAJW,QJGARE'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Red',
+        visible: false, text: '', font_size: 13, font: q, spacing_above: none, icon_align: left,
+        spacing_below: none, italic: true, background: '', bold: false, underline: false,
+        icon: ''}
+      name: password_change_label
+      layout_properties: {grid_position: 'ZPPAJW,EOVNLY'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_8
+      layout_properties: {grid_position: 'XVAIDR,SDTNUE'}
+    - type: Button
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '#eee', visible: true, text: Change Password, font_size: 15, font: q,
+        spacing_above: none, icon_align: left, spacing_below: none, italic: false,
+        background: '#333', bold: false, underline: false, icon: ''}
+      name: change_password_button
+      layout_properties: {grid_position: 'XVAIDR,TZHDAD'}
+      event_bindings: {click: change_password_button_click}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'WCJDGA,MJZQDE'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_1
+      layout_properties: {grid_position: 'JSKJYZ,GXWBOR'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_5
+    layout_properties: {grid_position: 'UGDYRH,QIPDLP'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_12
+      layout_properties: {grid_position: 'REKLED,WPKIVK'}
+  - type: ColumnPanel
+    properties: {}
+    name: column_panel_3
+    layout_properties: {grid_position: 'FLOTKR,ILNXSO'}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#eee', visible: true, text: 'Log Out ', font_size: 17, font: q,
+        spacing_above: small, icon_align: right, spacing_below: small, italic: false,
+        background: '#333', bold: false, underline: false, icon: 'fa:sign-out'}
+      name: log_out_button
+      layout_properties:
+        col_widths: {}
+        grid_position: ILYOVR,JRKBFR
+      event_bindings: {click: log_out_button_click}
+is_package: true

@@ -1,0 +1,112 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"OMIEKI":10,"XCIAVB":40,"TOKFGK":10}',
+    spacing_below: small, background: ''}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: SSEGTS,LAARPI
+    full_width_row: true
+  components:
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '#000000',
+      visible: true, text: Welcome To PIDES Viewer!, font_size: 40, font: q, spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: welcome_label
+    layout_properties: {grid_position: 'GRLZBP,EBDHCN', full_width_row: true}
+  - type: Spacer
+    properties: {visible: true, spacing_above: small, spacing_below: small, height: 82,
+      tooltip: ''}
+    name: spacer_1
+    layout_properties: {grid_position: 'HBZKRK,DITMUP', full_width_row: true}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_3
+    layout_properties: {grid_position: 'HYYBVX,OMIEKI'}
+  - type: ColumnPanel
+    properties: {role: rounded-box, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: none, spacing_above: small, col_widths: '{"JRMHKT":15,"QURBRL":45,"SOBSED":15,"DGICQN":45,"PGZZUV":15,"WOYDII":45,"LMBSIF":15,"EQPBVB":45,"DJMPLP":15,"ORQFGC":45}',
+      spacing_below: small, background: '#f1f1f1f1'}
+    name: column_panel_1
+    layout_properties: {grid_position: 'HYYBVX,XCIAVB'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Date:', font_size: 18, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label1
+      layout_properties: {grid_position: 'COKQEX,JRMHKT'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: '', font_size: 18, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: date_label
+      layout_properties: {grid_position: 'COKQEX,QURBRL'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Role:', font_size: 18, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_1
+      layout_properties: {grid_position: 'NXIJGC,PGZZUV'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: '', font_size: 18, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: role_label
+      layout_properties: {grid_position: 'NXIJGC,WOYDII'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Gin:', font_size: 18, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label3
+      layout_properties: {grid_position: 'MFBIAE,SOBSED'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: '', font_size: 18, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: gin_access_label
+      layout_properties: {grid_position: 'MFBIAE,DGICQN'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Gin Location:', font_size: 18, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'ZXYOFQ,LMBSIF'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: '', font_size: 18, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: location_label
+      layout_properties: {grid_position: 'ZXYOFQ,EQPBVB'}
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: '# Gin Stands:', font_size: 18, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_5
+      layout_properties: {grid_position: 'WWYXCH,DJMPLP'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: '', font_size: 18, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: num_stands_label
+      layout_properties: {grid_position: 'WWYXCH,ORQFGC'}
+  - type: Spacer
+    properties: {height: 32}
+    name: spacer_2
+    layout_properties: {grid_position: 'HYYBVX,TOKFGK'}
+is_package: true

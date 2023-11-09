@@ -1,0 +1,69 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{}',
+    spacing_below: small, background: ''}
+  name: column_panel_1
+  layout_properties: {grid_position: 'OZLINR,JTFWTS'}
+  components:
+  - type: Label
+    properties: {role: rounded-box, align: center, tooltip: '', border: '', foreground: 'theme:Sidebar
+        Background', visible: true, text: 'Login:', font_size: 22, font: q, spacing_above: none,
+      icon_align: left, spacing_below: medium, italic: false, background: '#e5e4e2',
+      bold: true, underline: false, icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'MXWADY,FYJQDO'}
+  - type: TextBox
+    properties: {role: rounded-box, align: left, hide_text: false, tooltip: '', placeholder: Email,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: none, italic: false,
+      background: '', bold: false, underline: false}
+    name: email_tb
+    layout_properties: {grid_position: 'WGYHBQ,GIKUSU'}
+    event_bindings: {pressed_enter: log_in_button_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Red',
+      visible: false, text: Please Enter an Email, font_size: 13, font: q, spacing_above: none,
+      icon_align: left, spacing_below: small, italic: true, background: '', bold: false,
+      underline: false, icon: ''}
+    name: email_error_label
+    layout_properties: {grid_position: 'VSYFYC,UALMAC'}
+  - type: TextBox
+    properties: {role: rounded-box, align: left, hide_text: true, tooltip: '', placeholder: Password,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: medium, type: text, spacing_below: none, italic: false,
+      background: '', bold: false, underline: false}
+    name: password_tb
+    layout_properties: {grid_position: 'RTBXCN,HTRTHX'}
+    event_bindings: {pressed_enter: log_in_button_click}
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Red',
+      visible: false, text: Please Enter a Password, font_size: 13, font: q, spacing_above: none,
+      icon_align: left, spacing_below: small, italic: true, background: '', bold: false,
+      underline: false, icon: ''}
+    name: password_error_label
+    layout_properties: {grid_position: 'HJZQWS,BLTYJL'}
+  - type: ColumnPanel
+    properties: {col_widths: '{}'}
+    name: column_panel_2
+    layout_properties: {grid_position: 'WDXJUM,PUTYME'}
+    components:
+    - type: Label
+      properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Red',
+        visible: false, text: Log in Failed. Please Check Password or Username, font_size: 15,
+        font: q, spacing_above: small, icon_align: left, spacing_below: small, italic: true,
+        background: '', bold: false, underline: false, icon: ''}
+      name: login_failed_label
+      layout_properties: {grid_position: 'OYRNHW,VMSLVW'}
+    - type: Button
+      properties: {role: button-click, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#EEEEEEE', visible: true, text: Login, font_size: 15, font: q,
+        spacing_above: medium, icon_align: left, spacing_below: none, italic: false,
+        background: '#e5e4e2', bold: true, underline: false, icon: ''}
+      name: log_in_button
+      layout_properties: {grid_position: 'REBZUZ,OWXLQR'}
+      event_bindings: {click: log_in_button_click}
+is_package: true

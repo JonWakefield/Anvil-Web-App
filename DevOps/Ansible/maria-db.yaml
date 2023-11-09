@@ -1,0 +1,34 @@
+---
+  - name: Setup Maria-db
+    hosts: servers
+    become: yes
+    
+    tasks:
+      - name: Update the package manager
+        apt:
+          update_cache: yes
+      
+      - name: Install MariaDB
+        apt:
+          name: mariadb-server
+          state: present
+
+      - name: Start MariaDB
+        service:
+          name: mariadb
+          state: started
+          enabled: yes
+
+      - name: Create database 'camera_nodes'
+        community.mysql.mysql_db:
+          name: camera_nodes
+          state: present
+      
+      - name: Create database user `ginuser`
+        community.mysql.mysql_user:
+          name: ginuser
+          password: Hello2018
+          priv: 'camera_nodes.*:ALL'
+          state: present
+
+  
