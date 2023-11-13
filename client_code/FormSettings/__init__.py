@@ -28,6 +28,10 @@ class FormSettings(FormSettingsTemplate):
 
     self.password_change_label.visible = False
 
+    # Allow only admins to add users
+    if self.role.lower() == "admin":
+      self.add_users_panel.visible = True
+
     # Set up the users list of accessible gins
     self.gin_name_drop_down.items = self.gins_accessible
     self.gin_name_drop_down.selected_value = self.gin_name
@@ -119,6 +123,43 @@ class FormSettings(FormSettingsTemplate):
     """This method is called when the button is clicked"""
 
     anvil.server.call("_check_user_password", self.username)
+
+  def add_users_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+
+    # Get args:
+    name = (self.add_name_tb.text).replace(" ", "")
+    email = self.add_email_tb.text
+    password = self.add_password_tb.text
+    role = self.roles_drop_down.selected_value
+    gins_accessible = self.multi_select_gin_names.selected
+
+    # Confirm we have no empty fields:
+
+
+    # Package everything into a dictionary
+    new_user_info = json.dumps({
+      'name': name,
+      'email': email,
+      'password': password,
+      'role': role,
+      'active_gin': gins_accessible[0],
+      'gins_accessible': gins_accessible
+    })
+
+    print(f"New User info: {new_user_info}")
+
+    # Pass info to server
+    add_user_bool = anvil.server.call("add_user", new_user_info)
+
+  def show_new_user_password_change(self, **event_args):
+    """This method is called when this checkbox is checked or unchecked"""
+    if(self.show_new_user_password.checked):
+      self.add_password_tb.hide_text = False
+    else:
+      self.add_password_tb.hide_text = True
+    
+    
 
 
 

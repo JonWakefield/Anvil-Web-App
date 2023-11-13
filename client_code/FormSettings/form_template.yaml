@@ -170,10 +170,11 @@ components:
       layout_properties: {grid_position: 'XVAIDR,TZHDAD'}
       event_bindings: {click: change_password_button_click}
   - type: ColumnPanel
-    properties: {col_widths: '{"DLUKYA":2,"CXJPXF":58,"WKAQCR":15,"XRGSWS":15,"BUPLYD":5,"KSQCUU":40,"ACZKLD":5,"NYRASB":40,"HTENTI":5,"JXNKJF":15,"QAOCKV":40,"XJFWKF":5,"CSSRYE":15,"LCVDQJ":40,"HIOEBP":5,"TXPUWF":15,"COHSZG":40,"CSOCGA":5,"VVQVXN":15,"AEVEIA":40}',
-      spacing_above: none, spacing_below: none, role: bottom-border}
+    properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"DLUKYA":2,"CXJPXF":58,"WKAQCR":15,"XRGSWS":15,"BUPLYD":5,"KSQCUU":25,"ACZKLD":5,"NYRASB":25,"HTENTI":8,"JXNKJF":26,"QAOCKV":35,"XJFWKF":5,"CSSRYE":15,"LCVDQJ":25,"HIOEBP":5,"TXPUWF":16,"COHSZG":24,"CSOCGA":5,"VVQVXN":15,"AEVEIA":40,"VXZWYX":5,"CVSBBR":55,"UEXSOQ":10,"KLUVHT":5,"KSABFQ":10,"WMUMEA":5,"PPFIOA":18,"XXRMEW":9,"MBRSQT":10,"CWUZZI":5,"ACRGXW":10,"EBSUWM":5,"BZUDGX":9}',
+      spacing_below: none, background: ''}
     name: add_users_panel
-    layout_properties: {grid_position: 'WCJDGA,XKWLPW'}
+    layout_properties: {grid_position: 'WCJDGA,OHITAV'}
     components:
     - type: Spacer
       properties: {height: 32}
@@ -181,7 +182,7 @@ components:
       layout_properties: {grid_position: 'XBUKZS,DLUKYA'}
     - name: label_3
       properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#333',
-        visible: true, text: Add User, font_size: null, font: '15', spacing_above: small,
+        visible: true, text: Add User, font_size: 15, font: q, spacing_above: small,
         icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
         underline: false, icon: ''}
       type: Label
@@ -190,12 +191,23 @@ components:
       properties: {height: 32}
       name: spacer_16
       layout_properties: {grid_position: 'SBTMQP,BUPLYD'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Name:', font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_4
+      layout_properties: {grid_position: 'SBTMQP,UEXSOQ'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_28
+      layout_properties: {grid_position: 'SBTMQP,KLUVHT'}
     - type: TextBox
-      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Name,
         border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
-        font: q, spacing_above: small, type: text, spacing_below: small, italic: false,
+        font: q, spacing_above: none, type: text, spacing_below: small, italic: false,
         background: '#eee', bold: false, underline: false}
-      name: add_username_tb
+      name: add_name_tb
       layout_properties: {grid_position: 'SBTMQP,WKAQCR'}
     - type: Spacer
       properties: {height: 32}
@@ -205,6 +217,17 @@ components:
       properties: {height: 32}
       name: spacer_17
       layout_properties: {grid_position: 'XTASWE,ACZKLD'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Email:', font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_5
+      layout_properties: {grid_position: 'XTASWE,KSABFQ'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_29
+      layout_properties: {grid_position: 'XTASWE,WMUMEA'}
     - type: TextBox
       properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
         border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
@@ -220,6 +243,17 @@ components:
       properties: {height: 32}
       name: spacer_18
       layout_properties: {grid_position: 'QOTHRG,HTENTI'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Password:', font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_6
+      layout_properties: {grid_position: 'QOTHRG,PPFIOA'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_30
+      layout_properties: {grid_position: 'QOTHRG,XXRMEW'}
     - type: TextBox
       properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
         border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
@@ -227,6 +261,16 @@ components:
         background: '#eee', bold: false, underline: false}
       name: add_password_tb
       layout_properties: {grid_position: 'QOTHRG,JXNKJF'}
+    - type: CheckBox
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
+        foreground: '', allow_indeterminate: false, visible: true, text: Show, font_size: 15,
+        font: q, spacing_above: small, spacing_below: small, italic: false, background: '',
+        bold: false, checked: false, underline: false}
+      name: show_new_user_password
+      layout_properties:
+        col_widths: {}
+        grid_position: QOTHRG,BZUDGX
+      event_bindings: {change: show_new_user_password_change}
     - type: Spacer
       properties: {height: 32}
       name: spacer_19
@@ -235,6 +279,17 @@ components:
       properties: {height: 32}
       name: spacer_20
       layout_properties: {grid_position: 'OIEALA,XJFWKF'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: 'Role:', font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_7
+      layout_properties: {grid_position: 'OIEALA,MBRSQT'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_31
+      layout_properties: {grid_position: 'OIEALA,CWUZZI'}
     - type: DropDown
       properties:
         role: null
@@ -265,9 +320,31 @@ components:
       properties: {height: 32}
       name: spacer_23
       layout_properties: {grid_position: 'YREZJJ,HIOEBP'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: Gins Accessible, font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_8
+      layout_properties: {grid_position: 'YREZJJ,ACRGXW'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_32
+      layout_properties: {grid_position: 'YREZJJ,EBSUWM'}
     - type: form:C6ZZPAPN4YYF5NVJ:MultiSelectDropDown
-      properties: {}
-      name: multi_select_drop_down_1
+      properties:
+        width: ''
+        align: left
+        enable_filtering: null
+        placeholder: None Selected
+        enabled: true
+        enable_select_all: true
+        items: [Cherokee, Spade, 'UCG ', WhiteOak]
+        visible: true
+        spacing_above: small
+        spacing_below: small
+        multiple: true
+      name: multi_select_gin_names
       layout_properties: {grid_position: 'YREZJJ,TXPUWF'}
     - type: Spacer
       properties: {height: 32}
@@ -288,10 +365,22 @@ components:
         background: '#333', bold: false, underline: false, icon: ''}
       name: add_users_button
       layout_properties: {grid_position: 'DCVISJ,VVQVXN'}
+      event_bindings: {click: add_users_button_click}
     - type: Spacer
       properties: {height: 32}
       name: spacer_24
       layout_properties: {grid_position: 'DCVISJ,AEVEIA'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_27
+      layout_properties: {grid_position: 'TNBEHL,VXZWYX'}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Blue',
+        visible: true, text: '', font_size: 13, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: true, background: '', bold: false, underline: false,
+        icon: ''}
+      name: user_add_label
+      layout_properties: {grid_position: 'TNBEHL,CVSBBR'}
     data_bindings: []
   - type: ColumnPanel
     properties: {col_widths: '{}'}
