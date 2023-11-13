@@ -186,6 +186,11 @@ class FormSettings(FormSettingsTemplate):
 
     email = self.remove_user_email.text
 
+    # Make sure we aren't removing the currently logged in user:
+    if email == self.email:
+      self.remove_user_label.text = "Can't remove currently logged in account"
+      self.remove_user_label.visible = True
+      
     if not self.check_all_fields_entered(email):
       self.remove_user_label.text = 'Please enter a value for all fields'
       self.remove_user_label.visible = True
