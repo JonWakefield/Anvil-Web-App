@@ -170,14 +170,129 @@ components:
       layout_properties: {grid_position: 'XVAIDR,TZHDAD'}
       event_bindings: {click: change_password_button_click}
   - type: ColumnPanel
-    properties: {col_widths: '{}'}
-    name: column_panel_1
-    layout_properties: {grid_position: 'WCJDGA,MJZQDE'}
+    properties: {col_widths: '{"DLUKYA":2,"CXJPXF":58,"WKAQCR":15,"XRGSWS":15,"BUPLYD":5,"KSQCUU":40,"ACZKLD":5,"NYRASB":40,"HTENTI":5,"JXNKJF":15,"QAOCKV":40,"XJFWKF":5,"CSSRYE":15,"LCVDQJ":40,"HIOEBP":5,"TXPUWF":15,"COHSZG":40,"CSOCGA":5,"VVQVXN":15,"AEVEIA":40}',
+      spacing_above: none, spacing_below: none, role: bottom-border}
+    name: add_users_panel
+    layout_properties: {grid_position: 'WCJDGA,XKWLPW'}
     components:
     - type: Spacer
       properties: {height: 32}
       name: spacer_1
-      layout_properties: {grid_position: 'JSKJYZ,GXWBOR'}
+      layout_properties: {grid_position: 'XBUKZS,DLUKYA'}
+    - name: label_3
+      properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: Add User, font_size: null, font: '15', spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      type: Label
+      layout_properties: {grid_position: 'XBUKZS,CXJPXF'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_16
+      layout_properties: {grid_position: 'SBTMQP,BUPLYD'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Username,
+        border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
+        font: q, spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '#eee', bold: false, underline: false}
+      name: add_username_tb
+      layout_properties: {grid_position: 'SBTMQP,WKAQCR'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_14
+      layout_properties: {grid_position: 'SBTMQP,KSQCUU'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_17
+      layout_properties: {grid_position: 'XTASWE,ACZKLD'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
+        border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
+        font: q, spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '#eee', bold: false, underline: false}
+      name: add_email_tb
+      layout_properties: {grid_position: 'XTASWE,XRGSWS'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_15
+      layout_properties: {grid_position: 'XTASWE,NYRASB'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_18
+      layout_properties: {grid_position: 'QOTHRG,HTENTI'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: true, tooltip: '', placeholder: Password,
+        border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
+        font: q, spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '#eee', bold: false, underline: false}
+      name: add_password_tb
+      layout_properties: {grid_position: 'QOTHRG,JXNKJF'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_19
+      layout_properties: {grid_position: 'QOTHRG,QAOCKV'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_20
+      layout_properties: {grid_position: 'OIEALA,XJFWKF'}
+    - type: DropDown
+      properties:
+        role: null
+        align: full
+        tooltip: ''
+        placeholder: ''
+        border: ''
+        enabled: true
+        foreground: '#333'
+        items: [Admin, Coordinator, Geo-Coordinator, Manager, Technician]
+        visible: true
+        font_size: 15
+        font: q
+        spacing_above: small
+        spacing_below: small
+        italic: false
+        background: '#eee'
+        bold: false
+        underline: false
+        include_placeholder: false
+      name: roles_drop_down
+      layout_properties: {grid_position: 'OIEALA,CSSRYE'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_21
+      layout_properties: {grid_position: 'OIEALA,LCVDQJ'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_23
+      layout_properties: {grid_position: 'YREZJJ,HIOEBP'}
+    - type: form:C6ZZPAPN4YYF5NVJ:MultiSelectDropDown
+      properties: {}
+      name: multi_select_drop_down_1
+      layout_properties: {grid_position: 'YREZJJ,TXPUWF'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_22
+      layout_properties: {grid_position: 'YREZJJ,COHSZG'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_26
+      layout_properties: {grid_position: 'PCSFBU,SVSTTK'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_25
+      layout_properties: {grid_position: 'DCVISJ,CSOCGA'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: Add Users, font_size: null, font: '',
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '', bold: false, underline: false, icon: ''}
+      name: add_users_button
+      layout_properties: {grid_position: 'DCVISJ,VVQVXN'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_24
+      layout_properties: {grid_position: 'DCVISJ,AEVEIA'}
+    data_bindings: []
   - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_5
