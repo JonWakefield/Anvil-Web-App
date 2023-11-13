@@ -171,7 +171,7 @@ components:
       event_bindings: {click: change_password_button_click}
   - type: ColumnPanel
     properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
-      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"DLUKYA":2,"CXJPXF":58,"WKAQCR":15,"XRGSWS":15,"BUPLYD":5,"KSQCUU":25,"ACZKLD":5,"NYRASB":25,"HTENTI":8,"JXNKJF":26,"QAOCKV":35,"XJFWKF":5,"CSSRYE":15,"LCVDQJ":25,"HIOEBP":5,"TXPUWF":16,"COHSZG":24,"CSOCGA":5,"VVQVXN":15,"AEVEIA":40,"VXZWYX":5,"CVSBBR":55,"UEXSOQ":10,"KLUVHT":5,"KSABFQ":10,"WMUMEA":5,"PPFIOA":18,"XXRMEW":9,"MBRSQT":10,"CWUZZI":5,"ACRGXW":10,"EBSUWM":5,"BZUDGX":9}',
+      wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{"DLUKYA":2,"CXJPXF":58,"WKAQCR":15,"XRGSWS":15,"BUPLYD":5,"KSQCUU":25,"ACZKLD":5,"NYRASB":25,"HTENTI":9,"JXNKJF":26,"QAOCKV":35,"XJFWKF":5,"CSSRYE":15,"LCVDQJ":25,"HIOEBP":5,"TXPUWF":16,"COHSZG":24,"CSOCGA":5,"VVQVXN":15,"AEVEIA":40,"VXZWYX":5,"CVSBBR":55,"UEXSOQ":10,"KLUVHT":5,"KSABFQ":10,"WMUMEA":5,"PPFIOA":17,"XXRMEW":9,"MBRSQT":10,"CWUZZI":5,"ACRGXW":10,"EBSUWM":5,"BZUDGX":9}',
       spacing_below: none, background: ''}
     name: add_users_panel
     layout_properties: {grid_position: 'WCJDGA,OHITAV'}
@@ -352,16 +352,12 @@ components:
       layout_properties: {grid_position: 'YREZJJ,COHSZG'}
     - type: Spacer
       properties: {height: 32}
-      name: spacer_26
-      layout_properties: {grid_position: 'PCSFBU,SVSTTK'}
-    - type: Spacer
-      properties: {height: 32}
       name: spacer_25
       layout_properties: {grid_position: 'DCVISJ,CSOCGA'}
     - type: Button
-      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      properties: {role: null, align: left, tooltip: '', border: '', enabled: true,
         foreground: '#eee', visible: true, text: Add Users, font_size: 15, font: q,
-        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        spacing_above: medium, icon_align: left, spacing_below: small, italic: false,
         background: '#333', bold: false, underline: false, icon: ''}
       name: add_users_button
       layout_properties: {grid_position: 'DCVISJ,VVQVXN'}

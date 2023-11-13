@@ -144,7 +144,6 @@ class FormSettings(FormSettingsTemplate):
       'email': email,
       'password': password,
       'role': role,
-      'active_gin': gins_accessible[0],
       'gins_accessible': gins_accessible
     })
 
