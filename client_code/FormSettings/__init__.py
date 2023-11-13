@@ -28,10 +28,16 @@ class FormSettings(FormSettingsTemplate):
 
     self.password_change_label.visible = False
     self.user_add_label.visible = False
+    self.remove_user_label.visible = False
 
     # Allow only admins to add users
     if self.role.lower() == "admin":
       self.add_users_panel.visible = True
+      self.remove_user_panel.visible = True
+    else:
+      self.add_users_panel.visible = False
+      self.remove_user_panel.visible = False
+      
 
     # Set up the users list of accessible gins
     self.gin_name_drop_down.items = self.gins_accessible
@@ -120,18 +126,10 @@ class FormSettings(FormSettingsTemplate):
     else:
       self.new_password_tb.hide_text = True
 
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-
-    anvil.server.call("_check_user_password", self.username)
-
-
   def check_all_fields_entered(self, *field_args):
     """"""
     for arg in field_args:
       if not arg:
-        self.user_add_label.text = 'Please enter a value for all fields'
-        self.user_add_label.visible = True
         return False
 
     return True
@@ -149,6 +147,8 @@ class FormSettings(FormSettingsTemplate):
     # Confirm we have no empty fields:
     print(f"gins acc. is {gins_accessible} of type: {type(gins_accessible)}")
     if not self.check_all_fields_entered(name, email, password, role, gins_accessible):
+      self.user_add_label.text = 'Please enter a value for all fields'
+      self.user_add_label.visible = True
       return False
 
     # Package everything into a dictionary
@@ -180,15 +180,25 @@ class FormSettings(FormSettingsTemplate):
       self.add_password_tb.hide_text = False
     else:
       self.add_password_tb.hide_text = True
+
+  def remove_user_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+
+    email = self.remove_user_email.text
+
+    if not self.check_all_fields_entered(email):
+      self.remove_user_label.text = 'Please enter a value for all fields'
+      self.remove_user_label.visible = True
+      return False
+
+
+    removed_user_bool = anvil.server.call("remove_user", json.dumps(email))
+
+    if removed_user_bool:
+      self.remove_user_label.text = "User removed successfully"
+      self.remove_user_label.visible = True
+    else:
+      self.remove_user_label.text = "Unable to remove user"
+      self.remove_user_label.visible = True
+      
     
-    
-
-
-
-
-
-
-
-
-
-

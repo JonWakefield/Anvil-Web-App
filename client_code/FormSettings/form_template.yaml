@@ -379,6 +379,58 @@ components:
       layout_properties: {grid_position: 'TNBEHL,CVSBBR'}
     data_bindings: []
   - type: ColumnPanel
+    properties: {role: bottom-border, tooltip: '', border: '', foreground: '', visible: true,
+      wrap_on: mobile, col_spacing: medium, spacing_above: small, col_widths: '{"AFEVDB":2,"XKSPHT":58,"PMNFSL":5,"AWDIUN":20,"ETFWKZ":55,"FMFNGH":4,"YWEZKP":11,"DLAUQJ":45}',
+      spacing_below: small, background: ''}
+    name: remove_user_panel
+    layout_properties: {grid_position: 'HHBQFZ,UWFERA'}
+    components:
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_26
+      layout_properties: {grid_position: 'FGVDNW,AFEVDB'}
+    - type: Label
+      properties: {role: left-padding, align: left, tooltip: '', border: '', foreground: '#333',
+        visible: true, text: Remove User, font_size: 15, font: q, spacing_above: small,
+        icon_align: left, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false, icon: ''}
+      name: label_9
+      layout_properties: {grid_position: 'FGVDNW,XKSPHT'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_33
+      layout_properties: {grid_position: 'IVXFKB,PMNFSL'}
+    - type: TextBox
+      properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: Email,
+        border: '', enabled: true, foreground: '#333', visible: true, text: '', font_size: 15,
+        font: q, spacing_above: small, type: text, spacing_below: small, italic: false,
+        background: '#eee', bold: false, underline: false}
+      name: remove_user_email
+      layout_properties: {grid_position: 'IVXFKB,AWDIUN'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_34
+      layout_properties: {grid_position: 'IVXFKB,ETFWKZ'}
+    - type: Spacer
+      properties: {height: 32}
+      name: spacer_35
+      layout_properties: {grid_position: 'PCSIJA,FMFNGH'}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '#eee', visible: true, text: Remove User, font_size: 15, font: q,
+        spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+        background: '#333', bold: false, underline: false, icon: ''}
+      name: remove_user_button
+      layout_properties: {grid_position: 'PCSIJA,YWEZKP'}
+      event_bindings: {click: remove_user_button_click}
+    - type: Label
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: 'theme:Red',
+        visible: true, text: '', font_size: 13, font: q, spacing_above: small, icon_align: left,
+        spacing_below: small, italic: false, background: '', bold: false, underline: false,
+        icon: ''}
+      name: remove_user_label
+      layout_properties: {grid_position: 'PCSIJA,DLAUQJ'}
+  - type: ColumnPanel
     properties: {col_widths: '{}'}
     name: column_panel_5
     layout_properties: {grid_position: 'UGDYRH,QIPDLP'}
