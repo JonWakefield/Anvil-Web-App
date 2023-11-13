@@ -125,6 +125,17 @@ class FormSettings(FormSettingsTemplate):
 
     anvil.server.call("_check_user_password", self.username)
 
+
+  def check_all_fields_entered(self, *field_args):
+    """"""
+    for arg in field_args:
+      if not arg:
+        self.user_add_label.text = 'Please enter a value for all fields'
+        self.user_add_label.visible = True
+        return False
+
+    return True
+  
   def add_users_button_click(self, **event_args):
     """This method is called when the button is clicked"""
 
@@ -136,7 +147,9 @@ class FormSettings(FormSettingsTemplate):
     gins_accessible = self.multi_select_gin_names.selected
 
     # Confirm we have no empty fields:
-
+    print(f"gins acc. is {gins_accessible} of type: {type(gins_accessible)}")
+    if not self.check_all_fields_entered(name, email, password, role, gins_accessible):
+      return False
 
     # Package everything into a dictionary
     new_user_info = json.dumps({
