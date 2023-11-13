@@ -27,6 +27,7 @@ class FormSettings(FormSettingsTemplate):
     self.gins_accessible = Globals.user['gins_accessible']
 
     self.password_change_label.visible = False
+    self.user_add_label.visible = False
 
     # Allow only admins to add users
     if self.role.lower() == "admin":
@@ -151,6 +152,15 @@ class FormSettings(FormSettingsTemplate):
 
     # Pass info to server
     add_user_bool = anvil.server.call("add_user", new_user_info)
+
+    if add_user_bool:
+      self.user_add_label.text = "Successfully added user"
+      self.user_add_label.visible = True
+    else:
+      self.user_add_label.text = "Unable to add user to database"
+      self.user_add_label.visible = True
+      
+      
 
   def show_new_user_password_change(self, **event_args):
     """This method is called when this checkbox is checked or unchecked"""
