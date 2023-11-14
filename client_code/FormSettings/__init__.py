@@ -11,8 +11,6 @@ from time import sleep
 from anvil.js import window
 import json
 
-# obv this is a comment
-
 @routing.route('settings', full_width_row=True) 
 class FormSettings(FormSettingsTemplate):
   def __init__(self, **properties):
@@ -186,18 +184,17 @@ class FormSettings(FormSettingsTemplate):
 
     email = self.remove_user_email.text
 
-    # Make sure we aren't removing the currently logged in user:
-    if email == self.email:
-      self.remove_user_label.text = "Can't remove currently logged in account"
-      self.remove_user_label.visible = True
-      
     if not self.check_all_fields_entered(email):
       self.remove_user_label.text = 'Please enter a value for all fields'
       self.remove_user_label.visible = True
       return False
 
+    user_info = json.dumps({
+      'remove_email': email,
+      'user_email': self.email
+    })
 
-    removed_user_bool = anvil.server.call("remove_user", json.dumps(email))
+    removed_user_bool = anvil.server.call("remove_user", user_info)
 
     if removed_user_bool:
       self.remove_user_label.text = "User removed successfully"
