@@ -16,9 +16,10 @@ services:
 startup: {type: module, module: MainModule}
 package_name: Pides_VIEWER
 allow_embedding: false
-name: Clone of Pides VIEWER (4)
+name: Anvil-Web-App
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
+metadata: {title: Pides Viewer}
 startup_form: null
 db_schema:
   users:

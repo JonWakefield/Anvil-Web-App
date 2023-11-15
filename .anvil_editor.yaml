@@ -21,8 +21,8 @@ unique_ids:
   server_modules:
     utils.create_db_tables: I5JJKBENS777I4XEL7FAW2CP25ZAK6MN
     uplink_scripts.graphs.scatter_chart: M7P36IFKVSW5FYLF27RB47UYAMRQEIP7
+    utils.add_user_funcs: YQC56MSJ2MKJRP6KSYBLD3L3NHH72ZZI
     utils.log_errors_utils: DCVTLBF4YAHPV322JJGAM7S65V2VETH4
-    add_users: 7D6JPXBSSDWPIWPNUS2U3O2NY3JWMW6O
     utils.mySQL_utils: FJJRH3H5FYJJSITQMN77L35ANCO7DYTV
     uplink_scripts.gin_monitor_uplink: 4X7VCUH7JEXQ42MN46SHIJ3NVNSYTSG4
     uplink_scripts.camera_controls_uplink: PFQBTDKRW6TYDKHHSZN4PAYUQUA7HHPU
@@ -33,6 +33,7 @@ unique_ids:
     utils.simulate_imageAges: Z4EKE564DHJRWPTZQB2DFUEAFGW2H6QU
     utils.dateTime_utils: OVPTJS4UUHAZAHSJ7USVFPKZ6EOMXMFE
     uplink_scripts.graphs.timeline_chart: FJSRPGVF2ZHOCXMMVIVLAC7JEIT5VSQX
+    add_admin_user: DVWPJVWMBF5DRGOOHSF75WYTXO6YFFQD
     uplink_scripts.graphs_uplink: T5E3HRF6BF3QJ4FSEJ5JRYZWEUXHM6YK
     uplink_scripts.stack: 5Y5IVMV3BV6W43UT6GOLPRIDATLSIJXQ
     Globals: FQYV6THE4EWNIMTRK3PKXY2XWUEMBQKV
