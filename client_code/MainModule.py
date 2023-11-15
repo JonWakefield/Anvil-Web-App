@@ -7,7 +7,6 @@ from anvil import open_form, alert
 
 from . import Globals
 
-
 def main():
   # check if a user is logged in
   # Try to access cookie to see if a user is logged in or not:
