@@ -7,6 +7,7 @@ from anvil import open_form, alert
 
 from . import Globals
 
+# Adding a comment or two
 
 def main():
   # check if a user is logged in
