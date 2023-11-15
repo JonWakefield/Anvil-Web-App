@@ -642,6 +642,46 @@ def change_user_password(user_data: json) -> dict:
     return returned_dict
 
 
+@anvil.server.callable
+def add_user(new_user_info: json) -> bool:
+    """
+        Function Description:
+            - Called from FormSettings (client)
+            - Adds new user to database
+
+        Input Args:
+            - 
+
+        Output Args:
+            - 
+    
+    """
+
+    added_user_bool = user_management.add_user_to_db(new_user_info)
+
+
+    return added_user_bool
+
+
+@anvil.server.callable
+def remove_user(user_info: json) -> bool:
+    """
+        Function Description:
+            -
+
+        Input Args:
+            - 
+
+        Output Args:
+            - 
+    
+    """
+
+    removed_user_bool = user_management.remove_user_from_db(user_info)
+
+    return removed_user_bool
+
+
 
 # *************** END user management FORM UPLINK FUNCTIONS *********** #
 
@@ -863,7 +903,7 @@ def remove_node_connection(node_params: json) -> bool:
 if __name__ == '__main__':
 
     #Connect to our Anvil WebApp
-    anvil.server.connect("server_6QGH5ZF3VP27AI3BRVEFJNMN-HAYJOOPAQQ6KMFOF")
+    anvil.server.connect("server_N5MBXTEDNDDWKOL34C4MECAT-Q4SHJ3MMY7N3HANC")
     
 
     #Continously loop through, waiting for uplink call

@@ -28,14 +28,11 @@ import json
 
 # Uplink importS:
 try:
-    from utils import mySQL_utils as localSQL
-    from uplink_scripts.user_management import hash_password, _get_user_password
-
+    import utils.mySQL_utils as localSQL
 # Local host imports:
 except (ModuleNotFoundError) as mod_err:
     print("Trying local host imports in add_users.py")
-    from .uplink_scripts.user_management import hash_password, _get_user_password
-    from .utils import mySQL_utils as localSQL
+    from . import mySQL_utils as localSQL
 
 
 
@@ -89,8 +86,8 @@ def add_user(name: str, email: str, password: str, role: str, gins_accessible: l
 
     # First check if email is already in table (if it is, can't add user):
     if email_exists(email):
-        print(f"email {email} already in table. Can't add.")
-        return
+        print(f"email {email} already in table. Can't add user")
+        return False
     
     # Hash the users password
     hashed_password = hash_password(password)
@@ -115,6 +112,88 @@ def add_user(name: str, email: str, password: str, role: str, gins_accessible: l
         localSQL.sql_closeConnection(cnx)
 
     print(f"successfully added user {name}")
+
+    return True
+
+
+# Working Function JW 10/12/2023
+def hash_password(password: str) -> str:
+    """
+        Function Description:
+            - Called from user_management.change_user_password
+            - Hashes the users password for increased protection
+            - Uses XOR With key
+
+        Input Args:
+            - password (str): Unhashed password provided from user
+
+        Output Args:
+            - output (str): Hashed Password
+            
+    """
+    """ XOR users password with cotton2023"""
+
+    key = "cotton2023"
+    output = ""
+
+    # Repeat the key to match the length of the input string
+    key_repeated = key * (len(password) // len(key)) + key[:len(password) % len(key)]
+
+
+    # Perform XOR operation character by character
+    for index, char in enumerate(password):
+        result = ord(char) ^ ord(key_repeated[index])
+        output += chr(result)
+
+
+    return output
+
+
+
+
+def _get_user_password(email: str) -> str:
+    """ DEVELOPMENT FUNCTION NOT USED IN PRODUCTION
+        Function Description:
+            - Called from anvil_uplink_router._check_user_password
+            - Checks that a users password is stored correctly 
+
+        Input Args:
+            - email (str): email for user
+
+        Output Args:
+            - password (str): Unhashed password returned to user
+            
+    """
+
+    try:
+        cnx = localSQL.sql_connect()
+
+        select_query = f"SELECT password_hash FROM users WHERE email = '{email}'"
+
+        result = localSQL.sql_select(cnx, select_query)[0]
+
+    except (Exception) as err:
+        # Create error message:
+        err_msg = f"Encountered error in, File: user_management, Function: _get_user_password func. \nError: {err}"
+        # Write error to error log:
+        # write_error_log(err_msg=err_msg)
+        print(err_msg)
+        return False
+    finally:
+        localSQL.sql_closeConnection(cnx)
+
+    print(f"hashed password for user {email} from data-table: {result[0]}")
+    print(f"length of hashed password from data-table: {len(result[0])}")
+
+    # Unhash password:
+    password = hash_password(result[0])
+
+    print(f"unhashed password: {password}")
+
+    return password
+
+
+
 
 
 

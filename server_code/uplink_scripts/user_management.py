@@ -19,6 +19,7 @@ Description:
 This module is designed to be integrated into a larger application for user management and access control. It relies on a MySQL database and a predefined JWT secret key for secure user authentication.
 
 """
+import email
 import json
 import jwt
 from datetime import datetime, timedelta
@@ -31,12 +32,14 @@ try:
     import utils.mySQL_utils as localSQL
     from utils.dateTime_utils import get_currentEpochTime_secs
     from utils.log_errors_utils import write_error_log, write_debug_log
+    from utils.add_user_funcs import email_exists, add_user, hash_password
 # Local server imports:
 except (ModuleNotFoundError) as mod_err:
     print("Trying local server imports in user_management.py")
     from ..utils import mySQL_utils as localSQL
     from ..utils.log_errors_utils import write_error_log, write_debug_log
     from ..utils.dateTime_utils import get_currentEpochTime_secs
+    from ..utils.add_user_funcs import email_exists, add_user, hash_password
 
 
 # JWT_KEY = "cotton2023"
@@ -111,41 +114,6 @@ def generate_jwt(user_id: str) -> str:
     # token = token.decode('utf-8')
 
     return token
-
-
-
-
-# Working Function JW 10/12/2023
-def hash_password(password: str) -> str:
-    """
-        Function Description:
-            - Called from user_management.change_user_password
-            - Hashes the users password for increased protection
-            - Uses XOR With key
-
-        Input Args:
-            - password (str): Unhashed password provided from user
-
-        Output Args:
-            - output (str): Hashed Password
-            
-    """
-    """ XOR users password with cotton2023"""
-
-    key = "cotton2023"
-    output = ""
-
-    # Repeat the key to match the length of the input string
-    key_repeated = key * (len(password) // len(key)) + key[:len(password) % len(key)]
-
-
-    # Perform XOR operation character by character
-    for index, char in enumerate(password):
-        result = ord(char) ^ ord(key_repeated[index])
-        output += chr(result)
-
-
-    return output
 
 
 def log_access_request(json_data: json) -> bool:
@@ -660,8 +628,8 @@ def authenticate_user(user_creds: json) -> dict:
     password = user_creds_dict.get("password")
 
     # Check for valid email & SQL injection
-    if not is_valid_email(email):
-        return False
+    # if not is_valid_email(email):
+    #     return False
 
     try:
 
@@ -717,43 +685,82 @@ def authenticate_user(user_creds: json) -> dict:
 
 
 
-def _get_user_password(email: str) -> str:
-    """ DEVELOPMENT FUNCTION NOT USED IN PRODUCTION
+def add_user_to_db(new_user_info: json) -> bool:
+    """
         Function Description:
-            - Called from anvil_uplink_router._check_user_password
-            - Checks that a users password is stored correctly 
+            -
 
         Input Args:
-            - email (str): email for user
+            - 
 
         Output Args:
-            - password (str): Unhashed password returned to user
-            
+            - 
+    
+    """
+    # Convert json to python dict
+    new_user_info_dict = json.loads(new_user_info)
+
+    # Unpack dictionary:
+    name = new_user_info_dict['name']
+    email = new_user_info_dict['email']
+    password = new_user_info_dict['password']
+    role = new_user_info_dict['role']
+    gins_accessible = new_user_info_dict['gins_accessible']
+
+    # Add user to table:
+    user_added_bool = add_user(name,
+                                email,
+                                password,
+                                role,
+                                gins_accessible)
+    
+    return user_added_bool
+    
+
+def remove_user_from_db(user_info: json) -> bool:
+    """
+        Function Description:
+            -
+
+        Input Args:
+            - 
+
+        Output Args:
+            - 
+    
     """
 
+    email_dict = json.loads(user_info)
+
+    # Un pack dictionary
+    user_email = email_dict['user_email']
+    remove_email = email_dict['remove_email']
+
+    # Cant remove email of currently logged in user:
+    if user_email == remove_email:
+        return False
+
     try:
+
         cnx = localSQL.sql_connect()
 
-        select_query = f"SELECT password_hash FROM users WHERE email = '{email}'"
+        # Setup delete query:
+        delete_query = f"DELETE FROM users WHERE email = '{remove_email}'"
 
-        result = localSQL.sql_select(cnx, select_query)[0]
-
-    except (Exception) as err:
+        localSQL.sql_insert(cnx, delete_query)
+                    
+    except (Exception) as sql_err:
         # Create error message:
-        err_msg = f"Encountered error in, File: user_management, Function: _get_user_password func. \nError: {err}"
+        err_msg = f"Encountered error in, File: user_management, Function: remove_user_from_db func. \nError: {sql_err}"
         # Write error to error log:
         write_error_log(err_msg=err_msg)
         print(err_msg)
         return False
+
     finally:
+        # Close connection:
         localSQL.sql_closeConnection(cnx)
 
-    print(f"hashed password for user {email} from data-table: {result[0]}")
-    print(f"length of hashed password from data-table: {len(result[0])}")
 
-    # Unhash password:
-    password = hash_password(result[0])
+    return True
 
-    print(f"unhashed password: {password}")
-
-    return password

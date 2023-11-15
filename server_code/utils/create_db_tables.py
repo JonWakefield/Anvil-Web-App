@@ -439,8 +439,17 @@ def create_CamNodes_Info_table():
 if __name__ == "__main__":
 
     # Establish connection to the database
+    # NOTE: IF USING ON A LOCALHOST (UBUNUT, RPI, ETC.) UNCOMMENT THE BELOW cnx = ... LINES OUT
+    # cnx = mysql.connector.connect(
+    #     host="maria-db",
+    #     user="ginuser",
+    #     password="Hello2018",
+    #     database="camera_nodes"
+    # )
+
+    # NOTE: IF USING INSIDE OF DOCKER CONTAINER UNCOMMENT THE BELOW cnx = ... LINES OUT
     cnx = mysql.connector.connect(
-        host="maria-db",
+        host="localhost",
         user="ginuser",
         password="Hello2018",
         database="camera_nodes"
