@@ -1,0 +1,57 @@
+---
+# Wakefield Notes:
+#     - This playbook executes fully with no issues.
+#   
+#- name: Server setup stage 2
+#  hosts: servers_group
+#  become: true
+#  become_user: root
+
+# stage 1 server setup; creates new user, copies ssh keys from root to new user 
+# assumes 
+# 1) var: user: ... is available from parent yaml playbook
+# 2) that user is logged in as root and root is logging in via valid ssh keys
+#tasks:
+
+# run equivalent of apt-get update
+  - name: Update apt get update cache
+    apt:
+      update_cache: yes
+
+  - name: Ansible apt install software-properties-common
+    apt: 
+      name: software-properties-common
+      state: present
+
+  - name: Ansible apt install python3
+    apt: 
+      name: python3
+      state: present
+
+  - name: Ansible apt install python3-pip
+    apt: 
+      name: python3-pip
+      state: present
+
+  - name: Ansible apt install build-essential
+    apt: 
+      name: build-essential
+      state: present
+
+  - name: Ansible apt install zlib1g
+    apt: 
+      name: zlib1g
+      state: present
+
+  - name: Ansible apt install lsof
+    apt: 
+      name: lsof
+      state: present
+
+  - name: Ansible apt install net-tools
+    apt: 
+      name: net-tools
+      state: present
+
+
+

@@ -1,0 +1,86 @@
+FROM --platform=linux/amd64 python:3-buster
+
+# # Creator of image:
+LABEL MAINTAINER="USDA-ARS CPPRU"
+
+# Arguments for user and group ID:
+ARG MY_UID
+ARG MY_GID
+
+# # Switch to root user
+USER root
+
+# Get the Amazon Corretto distribution, which is an open-source, production-ready distribution of the Open Java Development Kit (OpenJDK)
+RUN apt-get -yyy update && apt-get -yyy install software-properties-common && \
+    wget -O- https://apt.corretto.aws/corretto.key | apt-key add - && \
+    add-apt-repository 'deb https://apt.corretto.aws stable main'
+
+# Install coretto distribution (needed for hosting the local server)
+RUN apt-get -yyy update && apt-get -yyy install java-1.8.0-amazon-corretto-jdk ghostscript
+
+# Install MySQL Client, git and netcat:
+# netcat is used in the `entry.sh` script. Ensures mariaDB has been setup befor starting the web-app
+RUN apt-get update && \
+    apt-get install -y default-mysql-client git && \
+    apt-get install -y netcat-openbsd && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# # Create a new group with the specified MY_GID:
+RUN groupadd -g $MY_GID dcotton
+
+# Create a new user with the specified MY_UID, associated with the group, and a home directory
+RUN useradd -u $MY_UID -g $MY_GID -m dcotton
+
+# Add the user to the www-data group
+RUN usermod -aG www-data dcotton
+
+# Set the working directory inside the container
+WORKDIR /home/dcotton
+
+# Ensure the user has ownership of their home directory:
+RUN chown dcotton:dcotton /home/dcotton
+
+# Make the /app/ directory:
+RUN mkdir -p /home/dcotton/app
+
+# Ensure the user has ownership of the directory:
+RUN chown -R dcotton:dcotton /home/dcotton/app
+
+# Grant read write and execute privilegs to the user `dcotton`
+RUN chmod -R u+rwx /home/dcotton/app
+
+# Create .cache and .local directories & give dcotton ownership
+RUN mkdir -p /home/dcotton/.cache /home/dcotton/.local && \
+    chown dcotton:dcotton /home/dcotton/.cache /home/dcotton/.local && \
+    echo "directory matplotlib_config created"
+
+RUN chown -R dcotton:dcotton /home/dcotton && \
+    echo "chown dcotton:dcotton home dcotton"
+
+# Copy all files from the current directory into a folder in the container
+COPY . /home/dcotton/app
+
+
+# Ensure pip is updated, then download all requirements
+RUN pip install --upgrade pip
+# RUN pip install anvil-app-server
+RUN pip install --no-cache-dir -r /home/dcotton/app/Pides_VIEWER/requirements.txt 
+RUN anvil-app-server || true
+
+# Make directory for anvil-data (need for local_host)
+RUN mkdir /home/dcotton/anvil-data
+
+# give user privleges over directory
+RUN chown -R dcotton:dcotton /home/dcotton/anvil-data
+
+# Switch to user dcotton
+USER dcotton
+
+# ENTRYPOINT ["anvil-app-server", "--data-dir", "/home/dcotton/anvil-data", "--dep-id", "ZKNOF5FRVLPVF4BI=HashRouting", "--dep-id", "C6ZZPAPN4YYF5NVJ=anvil_extras"]
+
+# CMD ["--app", "Pides_VIEWER"]
+
+
+# Set our entrypoint to be entry.sh script (this will execute the entry.sh, creating db tables, users, and starting uplink server)
+ENTRYPOINT ["app/entry.sh"]

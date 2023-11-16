@@ -20,8 +20,8 @@ import time
 from threading import Thread
 
 
-# hostname = 'maria-db' # use the name of the service in the docker-compose file 
-hostname = 'localhost' 
+hostname = 'maria-db' # use the name of the service in the docker-compose file 
+# hostname = 'localhost' 
 username = 'ginuser'
 pswd = 'Hello2018'
 database = 'camera_nodes'
@@ -62,7 +62,7 @@ def get_time() -> str:
 
 
 
-def sql_connect(sql_user='ginuser',sql_password='Hello2018',sql_host='localhost', sql_database='camera_nodes', sql_port=3306):
+def sql_connect(sql_user='ginuser',sql_password='Hello2018',sql_host='maria-db', sql_database='camera_nodes', sql_port=3306):
     try:
         # print("try  connection")
         cnx = mysql.connector.connect(user=sql_user, password=sql_password, host=sql_host, database=sql_database, port=sql_port)

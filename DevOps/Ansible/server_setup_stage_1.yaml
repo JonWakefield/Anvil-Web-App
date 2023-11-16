@@ -1,0 +1,70 @@
+---
+#- name: Server setup stage 1
+#  hosts: servers_group
+#  become: true
+#  become_user: root
+
+# stage 1 server setup; creates new user, copies ssh keys from root to new user 
+# assumes 
+# 1) var: user: ... is available from parent yaml playbook
+# 2) that user is logged in as root and root is logging in via valid ssh keys
+#tasks:
+  - name: Create user "{{ user }}"
+    user: 
+      name: "{{ user }}"
+      password: "{{ 'secret' | password_hash('sha512') }}"
+      shell: /bin/bash
+      state: present
+
+  - name: Add user "{{ user }}" to sudo group
+    user:
+      name: "{{ user }}"
+      groups: sudo
+      append: yes
+
+  - name: Create .ssh directory for user "{{ user }}"
+    file:
+      path: "/home/{{ user }}/.ssh"
+      state: directory
+      owner: "{{ user }}"
+      group: "{{ user }}"
+      mode: '0700'
+
+#    - name: Copy ssh keys to user "{{ user }}" .ssh directory
+#      copy:
+#        src: "/home/{{ ansible_user }}/.ssh/"  #this file is on local machine that ansible is running on
+#        dest: "/home/{{ user }}/.ssh/"
+#        owner: "{{ user }}"
+#        group: "{{ user }}"
+#        mode: preserve
+#        directory_mode: '0700'
+
+  # Make sure to create the keys first
+  - name: copy ssh keys from root to user's .ssh directory
+    shell: cp -r ~/.ssh/* /home/"{{ user }}"/.ssh/
+
+  - name: change from root user to "{{ user }}" for .ssh directory
+    shell: chown -R "{{ user }}":"{{ user }}" /home/"{{ user }}"/.ssh
+
+  - name: Change permission of ssh keys to 0700 in .ssh directory
+    shell: chmod 0600 /home/"{{ user }}"/.ssh/authorized_keys
+
+#works till here
+#should now be able to login as user "{{ user }}" without password
+
+  - name: setup ufw to deny all
+    shell: ufw default deny incoming
+
+  - name: setup ufw to allow ssh
+    shell: ufw allow ssh
+
+  - name: setup ufw to allow 5901
+    shell: ufw allow 5901
+name: change from root user to "{{ user }}" for .ssh directory
+# don't do this here; it kills the ssh connection
+#  - name: enable ufw 
+#    shell: ufw enable
+
+
+
+# Keep task

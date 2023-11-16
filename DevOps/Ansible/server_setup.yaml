@@ -1,0 +1,50 @@
+# ---
+#ansible setup files for Ubuntu20 workstation
+# good templates Here: https://adamtheautomator.com/ansible-pip/
+# to test inventory run:  
+# $ ansible-inventory --list -y  (note: can't have comments in inventory files!!!)
+# to test connectivity, as root user run: (note: the -k option which tells ansible to get password)
+# $ ansible -i hosts_cloud.ini all -m ping -u root -k
+# in hosts_cloud.ini  be sure ansible_user=root as ssh keys have not been setup yet
+# to run (without keys): $ ansible-playbook -i hosts_cloud.ini server_setup_1.yaml -k -v
+# to run (with keys): $ ansible-playbook -i hosts_cloud.ini server_setup.yaml -v
+
+---
+- name: Master Server Setup 1
+  hosts: virtual_servers
+  become: true
+  become_user: root
+
+  vars:
+    user: jon
+  #  ansible_user: caproai  #don't do this; causes errors
+
+  tasks:
+    # - import_tasks: server_setup_stage_1.yaml    #basic user setup with ssh-keys
+    - import_tasks: server_setup_stage_2.yaml    #apt install basic packages
+    # - import_tasks: server_setup_stage_3.yaml     # Python requirements install
+    - import_tasks: server_setup_stage_4.yaml     # install Docker-ce (tested works)
+#    - import_tasks: server_setup_stage_6.yaml     #install K3s [don't install with Docker, k3s includes Docker (tested works)
+    # - import_tasks: server_setup_stage_7.yaml
+
+# next phase runs as user, not root
+#- name: Master Server Setup 2
+#  hosts: servers_group
+#  become: true
+#  become_user: "{{ user }}"
+
+
+#  tasks:
+#    - import_tasks: server_setup_stage_3.yaml
+#    - import_tasks: server_setup_stage_4.yaml
+
+
+# write tutorial to install ansible and get all of this setup
+
+# Run stage 1 without keys.
+# Then, run stage 2-4 with keys.
+# Make backup of virtual machine
+# Then, run stage 7 (anvil) with keys (comment out previous stages)
+
+# For me to run (not using root): ansible-playbook -i hosts_cloud.ini --ask-become-pass server_setup.yaml -v
+#   - This will ask for sudo password (cotton)

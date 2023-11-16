@@ -1,0 +1,44 @@
+---
+#- name: Server setup stage 6 (install K3s Kubernetes onto Server and Config.)
+#  hosts: servers_group
+#  become: true
+#  become_user: root
+
+# stage 6 K3s setup 
+# assumes 
+# 1) var: user: ... is available from parent yaml playbook
+# 2) that user is logged in as root 
+#tasks:
+    
+# https://computingforgeeks.com/install-kubernetes-on-ubuntu-using-k3s/  
+
+- name: Install K3s
+  shell: "curl -sfL https://get.k3s.io | sh -s - --docker  #this version disables docker install; so use if Docker already installed
+  #shell: "curl -sfL https://get.k3s.io | sh -"
+  become: yes
+  become_user: root
+
+#test install
+#1) sudo systemctl status k3s
+#2) sudo kubectl get nodes -o wide
+
+#sudo ufw allow 6443/tcp
+#sudo ufw allow 443/tcp
+- name: ufw allow port 6443
+  shell:  ufw allow 6443
+  become: yes
+  become_user: root
+
+- name: ufw allow port 443
+  shell:  ufw allow 443
+  become: yes
+  become_user: root
+
+#to get master node k3s token (so node workers can join run
+# sudo cat /var/lib/rancher/k3s/server/node-token 
+- name: get master-node-token (used for joining nodes to network)
+  shell: cat /var/lib/rancher/k3s/server/node-token
+
+# to join worker node/s to network
+# curl -sfL http://get.k3s.io | K3S_URL=https://<master_IP>:6443 K3S_TOKEN=<join_token> sh -s - --docker 
+

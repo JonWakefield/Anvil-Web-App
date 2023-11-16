@@ -439,21 +439,21 @@ def create_CamNodes_Info_table():
 if __name__ == "__main__":
 
     # Establish connection to the database
-    # NOTE: IF USING ON A LOCALHOST (UBUNUT, RPI, ETC.) UNCOMMENT THE BELOW cnx = ... LINES OUT
-    # cnx = mysql.connector.connect(
-    #     host="maria-db",
-    #     user="ginuser",
-    #     password="Hello2018",
-    #     database="camera_nodes"
-    # )
-
-    # NOTE: IF USING INSIDE OF DOCKER CONTAINER UNCOMMENT THE BELOW cnx = ... LINES OUT
+    # NOTE: IF USING ON A LOCALHOST (UBUNUT, RPI, ETC.) COMMENT THE BELOW cnx = ... LINES OUT
     cnx = mysql.connector.connect(
-        host="localhost",
+        host="maria-db",
         user="ginuser",
         password="Hello2018",
         database="camera_nodes"
     )
+
+    # NOTE: IF USING INSIDE OF DOCKER CONTAINER COMMENT THE BELOW cnx = ... LINES OUT
+    # cnx = mysql.connector.connect(
+    #     host="localhost",
+    #     user="ginuser",
+    #     password="Hello2018",
+    #     database="camera_nodes"
+    # )
 
 
     # Create a cursor object to execute SQL statements:

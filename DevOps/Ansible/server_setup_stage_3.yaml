@@ -1,0 +1,27 @@
+---
+#- name: Server setup stage 3 (python-pip installs)
+#  hosts: servers_group
+#  become: true
+#  become_user: root
+
+# stage 3 server setup; setups python pip installs 
+# assumes 
+# 1) var: user: ... is available from parent yaml playbook
+# 2) that user is logged in as {{ user }} 
+#tasks:
+      
+  - name: Copy requirements.txt to user "{{ user }}" home directory
+    copy:
+      src: "/home/{{ ansible_user }}/dev/ansible/requirements.txt"  #this file is on local machine that ansible is running on
+      dest: "/home/{{ user }}/requirements.txt"
+      owner: "{{ user }}"
+      group: "{{ user }}"
+      mode: preserve
+      #directory_mode: '0700'
+
+  - name: Install Python packages from requirements.txt
+    ansible.builtin.pip:
+      requirements: /home/{{ user }}/requirements.txt
+
+
+

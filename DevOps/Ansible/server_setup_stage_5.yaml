@@ -1,0 +1,49 @@
+---
+#- name: Server setup stage 5 (install NGINX onto Server and Config.)
+#  hosts: servers_group
+#  become: true
+#  become_user: root
+
+# stage 5 NGINX setup 
+# assumes 
+# 1) var: user: ... is available from parent yaml playbook
+# 2) that user is logged in as root 
+#tasks:
+      
+    - name: Install NGINX
+      apt:
+        name: nginx
+        state: present
+
+    - name: Stop NGINX service
+      ansible.builtin.systemd:
+        name: nginx
+        state: stopped
+
+    - name: Remove the default NGINX config
+      ansible.builtin.file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+
+    - name: Copy the custom default config
+      ansible.builtin.copy:
+        #src: /path/to/your/custom_default.conf
+        src: default.conf
+        dest: /etc/nginx/sites-available/
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Enable the custom default config
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/custom_default.conf
+        dest: /etc/nginx/sites-enabled/
+        state: link
+
+    - name: Start NGINX service
+      ansible.builtin.systemd:
+        name: nginx
+        state: started
+
+
+

@@ -1,0 +1,107 @@
+---
+
+# NOTE: K3S Has Docker installed already; so skip this if using K3S!!!
+
+#- name: Server setup stage 4 (install Docker onto Server)
+#  hosts: servers_group
+#  become: true
+#  become_user: root
+
+# stage 4 server setup; setups python pip installs 
+# assumes 
+# 1) var: user: ... is available from parent yaml playbook
+# 2) that user is logged in as root 
+#tasks:
+      
+
+#sudo apt install apt-transport-https ca-certificates curl software-properties-common
+  - name: Install packages
+    ansible.builtin.apt:
+      name: 
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+      state: present
+#    become: yes
+#    become_user: root
+
+
+
+#curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - name: Add Docker GPG apt Key
+    ansible.builtin.apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+#    become: yes
+#    become_user: root
+
+
+#sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+  - name: Add Docker repository
+    ansible.builtin.apt_repository:
+      repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+      state: present
+    become: yes
+    become_user: root
+
+# ensure we're installing from Docker repo not Ubuntu's
+  - name: Check docker-ce policy
+    shell: apt-cache policy docker-ce
+    register: policy_output
+#    become: yes
+#    become_user: root
+
+  - name: Print policy output
+    debug:
+      msg: "{{ policy_output.stdout }}"
+
+
+#  - name: Install docker-ce 
+#    apt: 
+#      name: docker-ce
+#      state: present
+#    become: yes
+#    become_user: root
+
+  - name: install docker engine
+    apt:
+      name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - docker-buildx-plugin
+        - docker-scan-plugin
+        - docker-compose-plugin
+      update_cache: yes
+
+
+#verify docker service is running
+  - name: Check docker-ce policy
+    shell: systemctl status docker
+    register: docker_status_output
+#    become: yes
+#    become_user: root
+
+  - name: Install Docker Compose using pip
+    pip:
+      name: docker-compose
+      executable: pip3
+      state: present
+
+  - name: Print Docker status
+    debug:
+      msg: "{{ docker_status_output.stdout }}"
+
+
+#sudo usermod -aG docker ${USER}
+#  - name: add docker to user group; so you can just type $ docker ps rather than $ sudo docker ps etc
+#    shell: usermod -aG docker ${USER}
+  - name: Add user to Docker group
+    ansible.builtin.user:
+      name: "{{ user }}"
+      groups: docker
+      append: yes
+    become: yes
+    become_user: root
+
