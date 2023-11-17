@@ -33,7 +33,7 @@ sudo docker-compose -f "$build_path" build --build-arg MY_UID=$MY_UID --build-ar
 
 # Start the containers
 #docker-compose up -d
-docker-compose -f "$build_path" up 
+sudo docker-compose -f "$build_path" up 
 
 # Executable command:
 #docker exec -it anvil_container bash
