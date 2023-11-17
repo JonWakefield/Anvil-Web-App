@@ -16,7 +16,6 @@ services:
     volumes:
       - .:/home/dcotton/app
       - ./www:/home/dcotton/www
-      # - /var/www/PidesMonitor:/home/dcotton/www
       # - /home/cotton/research2023/:/home/dcotton/research2023
     working_dir: /home/dcotton
     command: tail -f /dev/null
