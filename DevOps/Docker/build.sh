@@ -19,6 +19,7 @@ MY_GID=1000
 
 # Remove previous containers:
 docker rm -f anvil_container
+docker rm -f mariadb_container
 
 # Remove all unused dangling docker images
 docker image prune -a

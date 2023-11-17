@@ -65,7 +65,7 @@ COPY . /home/dcotton/app
 # Ensure pip is updated, then download all requirements
 RUN pip install --upgrade pip
 # RUN pip install anvil-app-server
-RUN pip install --no-cache-dir -r /home/dcotton/app/Pides_VIEWER/requirements.txt
+RUN pip install --no-cache-dir -r /home/dcotton/app/Pides_VIEWER/requirements.txt 
 RUN anvil-app-server || true
 
 # Make directory for anvil-data (need for local_host)
@@ -75,7 +75,8 @@ RUN mkdir /home/dcotton/anvil-data
 RUN chown -R dcotton:dcotton /home/dcotton/anvil-data
 
 # Switch to user dcotton
-USER dcotton
+# USER dcotton
+USER root
 
 # ENTRYPOINT ["anvil-app-server", "--data-dir", "/home/dcotton/anvil-data", "--dep-id", "ZKNOF5FRVLPVF4BI=HashRouting", "--dep-id", "C6ZZPAPN4YYF5NVJ=anvil_extras"]
 

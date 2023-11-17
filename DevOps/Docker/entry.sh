@@ -23,7 +23,7 @@ python /home/dcotton/app/Pides_VIEWER/server_code/utils/create_db_tables.py
 echo "Tables created successfully... adding users in add_users.py"
 
 # Add useres to `users` table
-python /home/dcotton/app/Pides_VIEWER/server_code/add_users.py
+python /home/dcotton/app/Pides_VIEWER/server_code/add_admin_user.py
 
 echo "Users added... Starting local server"
 
@@ -31,5 +31,5 @@ echo "Users added... Starting local server"
 
 # Navigate to the app directory:
 cd /home/dcotton/app
-# anvil-app-server --app Pides_VIEWER --origin http://192.168.1.227:3030 --data-dir /home/dcotton/anvil-data --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
-anvil-app-server --app Pides_VIEWER --data-dir /home/dcotton/anvil-data --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
+# anvil-app-server --app Pides_VIEWER --origin http://192.168.1.227:3031 --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
+anvil-app-server --app Pides_VIEWER --origin http://192.168.1.227:3030 --data-dir /home/dcotton/anvil-data --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras

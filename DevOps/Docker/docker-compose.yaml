@@ -15,10 +15,11 @@ services:
       - "3030:3030"
     volumes:
       - .:/home/dcotton/app
-      - /var/www/PidesMonitor:/home/dcotton/www
-      - /home/cotton/research2023/:/home/dcotton/research2023
+      - ./www:/home/dcotton/www
+      # - /var/www/PidesMonitor:/home/dcotton/www
+      # - /home/cotton/research2023/:/home/dcotton/research2023
     working_dir: /home/dcotton
-    # command: tail -f /dev/null
+    command: tail -f /dev/null
     environment:
       - MPLCONFIGDIR=/home/dcotton/matplotlib_config
       - DATABASE_HOST=maria-db
@@ -38,6 +39,8 @@ services:
     # name of container:
     container_name: mariadb_container
     restart: unless-stopped
+    ports:
+      - "3307:3306"
     # Setup database credientials:
     environment:
       - MYSQL_ROOT_PASSWORD=cotton
