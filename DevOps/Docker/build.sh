@@ -25,7 +25,7 @@ docker rm -f mariadb_container
 docker image prune -a
 
 # Build path for when running script via startup.sh
-build_path="$HOME/Desktop/local_website/docker-compose.yaml"
+build_path="~/Desktop/local_website/docker-compose.yaml"
 
 # Build the docker image passing in the UID and GID args
 # docker-compose build --build-arg MY_UID=$MY_UID --build-arg MY_GID=$MY_GID --no-cache
