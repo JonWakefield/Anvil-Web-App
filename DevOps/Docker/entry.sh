@@ -27,9 +27,12 @@ python /home/dcotton/app/Pides_VIEWER/server_code/add_admin_user.py
 
 echo "Users added... Starting local server"
 
-# anvil-app-server --app Pides_VIEWER --origin http://host:3030 --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
+
+# Obtain the host devices IP address:
+host_ip=$(hostname -I | cut -d' ' -f1)
+
 
 # Navigate to the app directory:
 cd /home/dcotton/app
 # anvil-app-server --app Pides_VIEWER --origin http://192.168.1.227:3031 --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
-anvil-app-server --app Pides_VIEWER --origin http://192.168.1.227:3030 --data-dir /home/dcotton/anvil-data --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
+anvil-app-server --app Pides_VIEWER --origin http://"$host_ip":3030 --data-dir /home/dcotton/anvil-data --dep-id ZKNOF5FRVLPVF4BI=HashRouting --dep-id C6ZZPAPN4YYF5NVJ=anvil_extras
