@@ -11,7 +11,7 @@
 
 ---
 - name: Master Server Setup 1
-  hosts: virtual_servers
+  hosts: localhost
   become: true
   become_user: root
 
