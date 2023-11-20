@@ -2,7 +2,7 @@
 
 PRODUCTION VERISION USED WITH LOCAL HOST:
 
-Website setup instructions:
+### Website setup instructions:
 
 1. Clone git repository:
     `git clone https://github.com https://github.com/jonwakefield/anvil-web-app`
@@ -28,12 +28,6 @@ Website setup instructions:
 
     Graphical Representation:
     ![Alt text](image.png) 
-
-### Anvil Data-Tables creation:
-
-    1. Navigate to `Pides_VIEWER/server_code/utils/`
-    2. run `Create_db_tables.py` to create all needed anvil related tables.
-        2a. (Comment out functions for tables already created)
 
 #### Table Explanations:
 
