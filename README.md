@@ -4,34 +4,16 @@ PRODUCTION VERISION USED WITH LOCAL HOST:
 
 Website setup instructions:
 
-<!-- 1. Install ubuntu 20.04 <link here>
+1. Clone git repository:
+    `git clone https://github.com https://github.com/jonwakefield/anvil-web-app`
 
-2. Run shell script <startup.sh> -->
+2a. After cloning, give `startup.sh` executable privileges:
+    `chmod +x startup.sh`
 
-1. Create a folder to house the project:
-    - Example: `home/<user>/Desktop/Anvil/local_website`
+2b. Run startup.sh
+    `./startup.sh`
 
-3. Clone anvil dependencies into parent folder:
-    -   `git clone https://github.com/s-cork/HashRouting`
-    -   `git clone https://github.com/anvilistas/anvil-extras`
-
-    - TEMPORARY STEP: Inside of Pides_VIEWER/DevOps/Docker move all files (5 files total) to the `local_website`` parent folder:
-
-    - Folder structure should look like:
-        - local_website/
-            - anvil_extras (IMPORT MUST RENAME TO `anvil_extras` WHEN YOU DOWNLAOD IT WILL BE NAMED `anvil-extras` BUT ANVIL WON'T ALLOW THIS)
-            - HashRouting
-            - Pides_VIEWER
-            - build.sh
-            - docker-compose.yaml
-            - Dockerfile
-            - entry.sh
-            - init.sql
-
-4. run `sudo ./build.sh`
-
-5. Website should be visible on local host
-
+3. After running startup.sh, the localwebsite should available on your network
 
 ### Client-to-Server File Connections:
 
