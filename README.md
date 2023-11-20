@@ -1,7 +1,3 @@
-# Setup Instructions:
-
-PRODUCTION VERISION USED WITH LOCAL HOST:
-
 ### Website setup instructions:
 
 1. Clone git repository:
