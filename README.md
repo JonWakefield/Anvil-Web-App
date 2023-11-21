@@ -78,7 +78,8 @@ It is important that both the [client_code](/client_code), [server_code](/server
 - Each client-side form has a respective server side modulein the [uplink_scripts](/server_code/uplink_scripts) folder, allowing for a managable code structure.
 
 Graphical Representation:
-![Alt text](image.png) 
+![image](https://github.com/JonWakefield/Anvil-Web-App/assets/67289517/8a5e4f2c-7849-4994-96d7-8bf281fd4017)
+
 
 ### theme
 - Additonal CSS & HTML page layout and styling. 
