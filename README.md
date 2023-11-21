@@ -16,27 +16,27 @@ This repository includes the complete code-base to setup, execute, and run the P
 - [License](#license)
 
 
-## Website Features:
+## Website Features
 
-- User specific accounts and persistant login
+- User-specific accounts and persistent login.
+- Remote configuration of RPi Camera Settings.
+- Ability to manage RPi camera nodes for setup, diagnosis, and installation.
 - Website operates on users local network, ensuring isolated data protection
-- Ability remotely configure RPi Camera Settings
-- Ability to view, add, or remove RPi camera nodes, allowing for quick setup, diagnosis, and install 
-- Up to date gin monitoring activity
-- Easy-to-build charts to monitor gin stand output and view results.
+- Real time plastic detection alerts
+- Real-time gin monitoring activity with easy-to-read charts.
 
 
-## Installation:
+## Installation
 
-Prerequisites: 
-- Ubuntu 20.04 64-bit AMD64
-- (It's possible other distro's are compatiblity, however testing has only been done on the above OS)
+### Prerequisites: 
+- Ubuntu 20.04 64-bit AMD64. Compatibility with other distros is possible but untested.
 
+### Steps
 
 1. Clone git repository:
     `git clone https://github.com/jonwakefield/anvil-web-app`
 
-2. After cloning, give [startup.sh](/startup.sh) executable privileges:
+2. Make [startup.sh](/startup.sh) executable:
     `chmod +x startup.sh`
 
 3. Run startup.sh
@@ -46,24 +46,18 @@ After running startup.sh, the anvil-web-app will be available for access on your
 
 ## Startup Script:
 
-The Startup shell script will take a fresh Ubuntu 20.04 OS install to a complete PIDES Viewer setup.
+### Features
 
-### Startup.sh Features:
-- Installs Git
-- Installs Ansible
-- Creates project directory
-- Clones repository
-- Clones Anvil Dependencies
-- Creates additional folders & moves necessary Docker files
-- Runs Ansible-startup script:
-    - See [Sever Setup Stage 1](DevOps/Ansible/server_setup_stage_1.yaml)
-    - See [Sever Setup Stage 2](DevOps/Ansible/server_setup_stage_2.yaml)
-    - See [Sever Setup Stage 4](DevOps/Ansible/server_setup_stage_4.yaml)
+- Installs Git, Ansible, and sets up the complete PIDES Viewer environment.
 
-- Executes Build.sh to create & start docker containers via [Docker Compose file](DevOps/Docker/docker-compose.yaml)
+### Steps
 
+- [Server Setup Stage 1](DevOps/Ansible/server_setup_stage_1.yaml)
+- [Server Setup Stage 2](DevOps/Ansible/server_setup_stage_2.yaml)
+- [Server Setup Stage 4](DevOps/Ansible/server_setup_stage_4.yaml)
+- Uses [Docker Compose file](DevOps/Docker/docker-compose.yaml) for container setup.
 
-## Project Folders:
+## Project Folders
 
 It is important that both the [client_code](/client_code), [server_code](/server_code), and [theme](/theme) folders are not renamed.
 
