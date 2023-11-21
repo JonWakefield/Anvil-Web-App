@@ -6,7 +6,7 @@
 
 # Table of Contents
 
-    1. [Installation](#installation)
+    1. [Installation](#Installation)
 
 
 ### Website Features
