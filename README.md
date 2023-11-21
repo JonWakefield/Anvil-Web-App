@@ -6,8 +6,8 @@
 
 ### Table of Contents:
 
-    - [Description](#Description)
-    - [Installation](#Installation)
+    - [Description](#description)
+    - [Installation](#installation)
     - [Contributing](#contributing)
 
 
@@ -21,7 +21,7 @@
     - Easy-to-build charts to monitor gin stand output and view results.
 
 
-### Installation:
+## Installation:
 
     Prerequisites
 
