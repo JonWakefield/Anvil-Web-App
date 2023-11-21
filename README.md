@@ -1,4 +1,29 @@
-### Website setup instructions:
+# PIDES Viewer
+
+### Description:
+
+    - This repository includes the complete code-base to setup, execute, and run the PIDES Viewer Anvil-web-app.
+
+### Table of Contents:
+
+    - [Description](#Description)
+    - [Installation](#Installation)
+    - [Contributing](#contributing)
+
+
+### Website Features
+
+    - User specific accounts and persistant login
+    - Website operates on users local network, ensuring isolated data protection
+    - Ability remotely configure RPi Camera Settings
+    - Ability to view, add, or remove RPi camera nodes, allowing for quick setup, diagnosis, and install 
+    - Up to date gin monitoring activity
+    - Easy-to-build charts to monitor gin stand output and view results.
+
+
+### Installation:
+
+    Prerequisites
 
 1. Clone git repository:
     `git clone https://github.com https://github.com/jonwakefield/anvil-web-app`
@@ -19,6 +44,7 @@
 
     - Anvil_uplink_router:
         - Routes recieved client data to the appropriate server side module
+
         - Returns data back to client side
         - Ex: FormCamControls --[data]--> anvil_uplink_router --[data]--> camera_controls_uplink --[returned_data]--> anvil_uplink_router --[returned_data]--> FormCamControls
 
