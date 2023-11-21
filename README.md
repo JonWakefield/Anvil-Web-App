@@ -2,7 +2,7 @@
 
 ## Description:
 
-- This repository includes the complete code-base to setup, execute, and run the PIDES Viewer Anvil-web-app.
+This repository includes the complete code-base to setup, execute, and run the PIDES Viewer Anvil-web-app.
 
 ## Table of Contents
 
@@ -29,24 +29,24 @@
 ## Installation:
 
 Prerequisites: 
-    - Fresh install of Ubuntu 20.04 64-bit AMD64
-    - (It's possible other distro's are compatiblity, however testing has only been done on the above OS)
+- Ubuntu 20.04 64-bit AMD64
+- (It's possible other distro's are compatiblity, however testing has only been done on the above OS)
 
 
 1. Clone git repository:
     `git clone https://github.com/jonwakefield/anvil-web-app`
 
-2a. After cloning, give [startup.sh](/startup.sh) executable privileges:
+2. After cloning, give [startup.sh](/startup.sh) executable privileges:
     `chmod +x startup.sh`
 
-2b. Run startup.sh
+3. Run startup.sh
     `./startup.sh`
 
-3. After running startup.sh, the anvil-web-app will be available for access on your local network via a Docker container.
+After running startup.sh, the anvil-web-app will be available for access on your local network via a Docker container.
 
 ## Startup Script:
 
-The Startup shell script will take a fresh OS install to a complete PIDES Viewer setup.
+The Startup shell script will take a fresh Ubuntu 20.04 OS install to a complete PIDES Viewer setup.
 
 ### Features:
 - Installs Git
