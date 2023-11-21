@@ -48,7 +48,7 @@ After running startup.sh, the anvil-web-app will be available for access on your
 
 The Startup shell script will take a fresh Ubuntu 20.04 OS install to a complete PIDES Viewer setup.
 
-### Features:
+### Startup.sh Features:
 - Installs Git
 - Installs Ansible
 - Creates project directory
@@ -70,12 +70,12 @@ It is important that both the [client_code](/client_code), [server_code](/server
 ### client_code
 - All client-side code can be find within this folder.
 - Each form has a `__init__.py` file accompanied by a `.yaml` file that deals with the UI elements
-- To view the client-side and/or make changes to its layout, use Anvils esay-to-use GUI editor, by cloning this repisotory to your anvil account
+- To view the client-side and/or make changes to its layout, use Anvils easy-to-use GUI editor, by cloning this repository to your anvil account
 
 ### server_code
 - Directory contains all server side code
 - Client side calls to server code are routed through the [anvil_uplink_router](/server_code/anvil_uplink_router.py) module to the corresponding form module found in the [uplink_scripts](/server_code/uplink_scripts/) folder
-- Each client-side form has a respective server side module, allowing for a managable code structure.
+- Each client-side form has a respective server side modulein the [uplink_scripts](/server_code/uplink_scripts) folder, allowing for a managable code structure.
 
 Graphical Representation:
 ![Alt text](image.png) 
@@ -305,3 +305,6 @@ Graphical Representation:
 Contributors: Jonathan Wakefield, Dr. Mathew Pelletier, USDA - ARS
 
 ## License
+
+The software source code files are released into the public domain as Open-Source Software with the license as dictated by the incorporated libraries utilized by our source code;
+typical examples of applicable licenses are MIT and GNU Open-source licenses. The code is written in Python and utilizes only Open-source numerical, statistical, and machine-learning libraries.
