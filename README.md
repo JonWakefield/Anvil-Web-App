@@ -6,7 +6,7 @@
 
 # Table of Contents
 
-    1. [GitHub Pages](https://pages.github.com/)
+[GitHub Pages](https://pages.github.com/)
 
 
 ### Website Features
