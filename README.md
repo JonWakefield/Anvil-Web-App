@@ -6,7 +6,7 @@
 
 # Table of Contents
 
-    1. [Installation](#Installation)
+    1. [Installation](#[Installation](https://github.com/JonWakefield/Anvil-Web-App/tree/master#installation))
 
 
 ### Website Features
