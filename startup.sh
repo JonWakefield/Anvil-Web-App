@@ -48,7 +48,8 @@ else
     fi
 fi
 
-# 3) Make project directory:
+
+# 5) Make project directory:
 # Project holder
 project_folder="$HOME/Desktop/local_website"
 
@@ -158,6 +159,28 @@ if [ -f "$ansible_script_path" ]; then
 else
     echo "Ansible playbook not found at '$ansible_script_path'."
 fi
+
+
+# 4) Install OpenCV & Qt5:
+sudo apt update
+
+# Check if OpenCV is already installed
+if ! dpkg -l | grep -q libopencv-dev; then
+    echo "Installing OpenCV..."
+    sudo apt-get install python3-opencv
+    echo "OpenCV installed"
+else
+    echo "OpenCV already installed"
+fi
+
+# 4) Install QT5
+if [ -x "$(command -v qmake)" ]; then
+    echo "QT5 is already installed... skipping..."
+else
+    # install QT5
+    sudo apt-get install qt5-default
+fi
+
 
 
 build_script_path="$HOME/Desktop/local_website/build.sh"
