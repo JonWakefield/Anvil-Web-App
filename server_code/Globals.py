@@ -10,6 +10,10 @@ import json
 import pandas as pd
 from PIL.Image import Image
 
+""" ANVIL USER ACCOUNT INFO """
+username = "Admin"
+password = "1234"
+
 
 """ TYPE HINT GLOBALS: """
 # Custom type hint for anvil_media (images)

@@ -213,15 +213,6 @@ if __name__ == "__main__":
             - Technician
     """
 
-    # Example Usage:
-    ex_name = "Jon"
-    ex_email = "raspberrypijon.tx@gmail.com"
-    ex_password = "Hello" # Provide unhashed password
-    ex_role = "Admin"
-    ex_gins_accessible = ["Cherokee", "Spade", "UCG", "WhiteOak"]
-
-    add_user(ex_name, ex_email, ex_password, ex_role, ex_gins_accessible)
-
     # Example 2:
     ex_name = "Tim Manager"
     ex_email = "manager@email.com"

@@ -3,6 +3,9 @@
 ## Description:
 
 This repository includes the complete code-base to setup, execute, and run the PIDES Viewer Anvil-web-app.
+The PIDES Viewer web application is a website designed to enhance productivity by allowing for swift disgnosis
+of plasic and HIE (Hand intrusion events) occurances through a gin stand.
+
 
 ## Table of Contents
 
@@ -43,6 +46,12 @@ This repository includes the complete code-base to setup, execute, and run the P
     `./startup.sh`
 
 After running startup.sh, the anvil-web-app will be available for access on your local network via a Docker container.
+### Website Access:
+The website can be accessed on the same network as the server.
+To access the website visit: https://<host_ip>:3030
+replace <host_ip> with the host IP of the server.
+
+The docker container is configured to auto-restart after a shutdown.
 
 ## Startup Script:
 
