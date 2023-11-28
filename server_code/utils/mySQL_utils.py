@@ -62,10 +62,11 @@ def get_time() -> str:
 
 
 
-def sql_connect(sql_user='ginuser',sql_password='Hello2018',sql_host='maria-db', sql_database='camera_nodes', sql_port=3306):
+def sql_connect(sql_user='ginuser',sql_password='Hello2018',sql_host='maria-db', sql_database='camera_nodes', sql_port=3307):
     try:
         # print("try  connection")
-        cnx = mysql.connector.connect(user=sql_user, password=sql_password, host=sql_host, database=sql_database, port=sql_port)
+        # cnx = mysql.connector.connect(user=sql_user, password=sql_password, host=sql_host, database=sql_database, port=sql_port)
+        cnx = mysql.connector.connect(user=sql_user, password=sql_password, host=sql_host, database=sql_database)
         
         # print("cnx: ", cnx)  #will print something if it connects ok
         
