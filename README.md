@@ -328,8 +328,8 @@ To change the SQL credentials (username, password, database name), operators mus
     CREATE USER 'new_db_username'@'maria-db' IDENTIFIED BY 'new_db_password';
     GRANT ALL PRIVILEGES ON new_db_name.* TO 'new_db_username'@'maria-db';
     FLUSH PRIVILEGES;
-3. server_code/Globals.py file:
-    Lines 19-21:
+3. server_code/utils/DB_CREDIDENTIALS.py:
+    Lines 3-5:
     DB_USERNAME = "new_db_username"
     DB_PASSWORD = "new_db_password"
     DB_NAME = "new_db_name"
