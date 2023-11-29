@@ -16,15 +16,19 @@ import anvil.users
 import mysql.connector  
 import sys
 import time
+try:
+    from DB_CREDIENTIALS import DB_USERNAME, DB_NAME, DB_PASSWORD
+except (ModuleNotFoundError) as moderr:
+    from .DB_CREDIENTIALS import DB_USERNAME, DB_NAME, DB_PASSWORD
 
 from threading import Thread
 
 
 hostname = 'maria-db' # use the name of the service in the docker-compose file 
 # hostname = 'localhost' 
-username = 'ginuser'
-pswd = 'Hello2018'
-database = 'camera_nodes'
+username = DB_USERNAME
+pswd = DB_PASSWORD
+database = DB_NAME
 
 tableName = "Camera_Configuration"
 
@@ -62,7 +66,7 @@ def get_time() -> str:
 
 
 
-def sql_connect(sql_user='ginuser',sql_password='Hello2018',sql_host='maria-db', sql_database='camera_nodes', sql_port=3307):
+def sql_connect(sql_user=DB_USERNAME,sql_password=DB_PASSWORD,sql_host='maria-db', sql_database=DB_NAME, sql_port=3307):
     try:
         # print("try  connection")
         # cnx = mysql.connector.connect(user=sql_user, password=sql_password, host=sql_host, database=sql_database, port=sql_port)

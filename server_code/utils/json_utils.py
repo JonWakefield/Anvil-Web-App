@@ -8,9 +8,6 @@
 
 """
 
-
-
-
 import json
 
 def convert_to_json_string(keys: list, values: list) -> str:

@@ -15,6 +15,7 @@ of plasic and HIE (Hand intrusion events) occurances through a gin stand.
 - [Startup Script](#startup-script)
 - [Project Folders](#project-folders)
 - [Database](#database)
+- [Passwords](#passwords)
 - [Contributions](#contributions)
 - [License](#license)
 
@@ -302,6 +303,50 @@ Graphical Representation:
             | 37 | NULL   | 4444 | WhiteOak |           1 |                   1 |
             | 38 | NULL   | 1234 | UCG      |           3 |                   1 |
             +----+--------+------+----------+-------------+---------------------+
+
+## Passwords:
+Default passwords are provided for the SQL database, along with default login credentials.
+Operaters can change the passwords to both the SQL database and the default login credentials.
+
+### Changing SQL Credentials
+To change the SQL credentials (username, password, database name), operators must modify 3 files:
+1. Docker-compose.yaml file:
+    Lines 26-28:
+    - DATABASE_USER=new_db_username
+    - DATABASE_PASS=new_db_password
+    - DATABASE_NAME=new_db_name
+    Lines 46 - 48:
+    - MYSQL_DATABASE=new_db_name
+    - MYSQL_USER=new_db_username
+    - MYSQL_PASSWORD=new_db_password
+2. init.sql file:
+    Lines 2-3:
+    CREATE DATABASE IF NOT EXISTS new_db_name;
+    USE new_db_name;
+
+    Lines 7-9:
+    CREATE USER 'new_db_username'@'maria-db' IDENTIFIED BY 'new_db_password';
+    GRANT ALL PRIVILEGES ON new_db_name.* TO 'new_db_username'@'maria-db';
+    FLUSH PRIVILEGES;
+3. server_code/Globals.py file:
+    Lines 19-21:
+    DB_USERNAME = "new_db_username"
+    DB_PASSWORD = "new_db_password"
+    DB_NAME = "new_db_name"
+
+### Changing Default website login credientials
+The most convient way to change the default credientails is to loggin to the website using the default loggin, create a new admin account, and remove the old admin account. 
+
+#### Default login
+email: Admin
+password: Hello
+
+
+### Having the crediential changes take effect
+    1. Navigate to the projects directory. (By default this is ~/Desktop/local_website)
+    2. run: './build.sh'
+    NOTE: This will create a whole new project, replacing all previous data.
+
 
 
 ## Contributions:

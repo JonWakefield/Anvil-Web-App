@@ -135,11 +135,13 @@
     | 37 | NULL   | 4444 | WhiteOak |           1 |                   1 |
     | 38 | NULL   | 1234 | UCG      |           3 |                   1 |
     +----+--------+------+----------+-------------+---------------------+
-
-
-
-
 """
+try:
+    from DB_CREDIENTIALS import DB_USERNAME, DB_NAME, DB_PASSWORD
+except (ModuleNotFoundError) as moderr:
+    # Except occures when local server is started 
+    pass
+
 try:
     import mysql.connector
     import mySQL_utils as localSQL
@@ -149,8 +151,9 @@ try:
     import anvil.tables.query as q
     from anvil.tables import app_tables
     import anvil.users
+    
 except (ModuleNotFoundError) as mod_err:
-    print("Module not found err in create_db_tables.py\n{mod_err}")
+    print(f"Module not found err in create_db_tables.py\n{mod_err}")
 
 def create_anvil_imgClassification_table():
 
@@ -442,16 +445,16 @@ if __name__ == "__main__":
     # NOTE: IF USING ON A LOCALHOST (UBUNUT, RPI, ETC.) COMMENT THE BELOW cnx = ... LINES OUT
     cnx = mysql.connector.connect(
         host="maria-db",
-        user="ginuser",
-        password="Hello2018",
-        database="camera_nodes"
+        user=DB_USERNAME,
+        password=DB_PASSWORD,
+        database=DB_NAME
     )
 
     # NOTE: IF USING INSIDE OF DOCKER CONTAINER COMMENT THE BELOW cnx = ... LINES OUT
     # cnx = mysql.connector.connect(
     #     host="localhost",
-    #     user="ginuser",
-    #     password="Hello2018",
+    #     user=DB_USERNAME,
+    #     password=DB_PASSWORD,
     #     database="camera_nodes"
     # )
 

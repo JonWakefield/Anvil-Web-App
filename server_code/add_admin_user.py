@@ -57,7 +57,7 @@ if __name__ == "__main__":
 
     # Add Admin user:
     name = "Admin"
-    email = "admin"
+    email = "Admin"
     password = "Hello" # Provide unhashed password
     role = "Admin"
     gins_accessible = ["Cherokee", "Spade", "UCG", "WhiteOak"]
