@@ -23,8 +23,8 @@ services:
       - MPLCONFIGDIR=/home/dcotton/matplotlib_config
       - DATABASE_HOST=maria-db
       - DATABASE_PORT=3307
-      - DATABASE_USER=ginuser
-      - DATABASE_PASS=Hello2018
+      - DATABASE_USER=cotton_user
+      - DATABASE_PASS=db1234
       - DATABASE_NAME=camera_nodes
     depends_on:
       - maria-db
@@ -44,8 +44,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=cotton
       - MYSQL_DATABASE=camera_nodes
-      - MYSQL_USER=ginuser
-      - MYSQL_PASSWORD=Hello2018
+      - MYSQL_USER=cotton_user
+      - MYSQL_PASSWORD=db1234
     volumes:
       # Init script creates database `camera_nodes` and gives access to user `ginuser`
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Mount the init.sql script
