@@ -342,11 +342,10 @@ email: Admin
 password: Hello
 
 
-### Having the crediential changes take effect
+### Have Db Credientials take effect:
+To have changes to the database credientials take effect, the previous project build must be deleted and started ned.
     1. Navigate to the projects directory. (By default this is ~/Desktop/local_website)
     2. run: './build.sh'
-    NOTE: This will create a whole new project, replacing all previous data.
-
 
 
 ## Contributions:
