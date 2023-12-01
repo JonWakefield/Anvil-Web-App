@@ -61,7 +61,15 @@ if [ ! -d "$project_folder" ]; then
         echo "Failed to create project directory"
     fi
 else
-    echo "project directory folder already created, skipping creation..."
+    read -p "Folder already created. Do you want to delete its contents? (y/n): " response
+
+    if [[ "$response" == "y" || "$response" == "Y" ]]; then
+        echo "Deleting contents"
+        rm -rf "${project_folder:?}"/*
+        echo "Contents Deleted"
+    else
+        echo "contents not deleted"
+    fi
 fi
 
 
